@@ -19,7 +19,7 @@
   .hd { display:flex; align-items:center; gap:22px; padding:0 22px; height:52px; }
     padding:7px 14px; border-radius:8px; text-decoration:none; white-space:nowrap; }
   /* 인트로 밴드 */
-  .intro { display:block; text-align:center; padding:36px 20px 44px; }
+  .intro { display:block; text-align:center; padding:36px 20px 60px; }
   .intro h1, .intro p, .intro .ver { display:block; width:auto; margin:0 auto; text-align:center; }
   .intro p { margin-top:6px; }
   .intro h1 { font-size:28px; line-height:36px; font-weight:800; letter-spacing:-0.03em; color:#fff; }
@@ -28,7 +28,7 @@
     padding:13px 30px; border-radius:12px; text-decoration:none; text-align:center; }
   .dl:hover { background:var(--n2); }
   .dl small { display:block; font-weight:500; font-size:11px; color:var(--n5); margin-top:2px; }
-  .ver { margin:10px auto 0; text-align:center; font-size:11px; line-height:16px; color:rgba(255,255,255,.82); }
+  .ver { margin:12px auto 0; text-align:center; font-size:11px; line-height:16px; color:rgba(255,255,255,.82); }
   main { max-width:1180px; margin:0 auto; padding:26px 22px 8px; }
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:stretch; }
   @media (max-width:1040px){ .grid { grid-template-columns:repeat(2,1fr); } }
@@ -42,6 +42,19 @@
   li b { color:var(--n7); }
   .note { margin-top:auto; padding-top:10px; font-size:11px; line-height:16px; color:var(--n5); }
   .kbd { background:var(--n1); border:1px solid var(--n3); border-radius:5px; padding:1px 6px; font-size:12px; white-space:nowrap; }
+  @media (max-width:640px) {
+    .hd { height:48px; padding:0 16px; }
+    .intro { padding:26px 16px 44px; }
+    .intro h1 { font-size:22px; line-height:30px; }
+    .intro p { font-size:13px; }
+    .dl { width:100%; max-width:340px; padding:13px 0; }
+    main { padding:18px 14px 6px; }
+    .grid { gap:10px; }
+    section { padding:16px 16px; }
+    h2 { font-size:16px; }
+    ol,ul { font-size:13.5px; padding-left:16px; }
+    .kbd { white-space:normal; word-break:keep-all; }
+  }
   footer { text-align:center; padding:22px 0 36px; color:var(--n5); font-size:11px; }
 </style>
 </head>
