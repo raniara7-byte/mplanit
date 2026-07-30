@@ -17,23 +17,23 @@
   /* 스티키 헤더 — 그라데이션 1곳 (mplanit-style 표준) */
   .top { background:linear-gradient(135deg,var(--navy),var(--mid),var(--sky)); color:#fff; }
   .hd { display:flex; align-items:center; gap:22px; padding:0 22px; height:52px; }
-    padding:7px 14px; border-radius:8px; text-decoration:none; white-space:nowrap; }
   /* 인트로 밴드 */
-  .intro { display:block; text-align:center; padding:36px 20px 60px; }
-  .intro h1, .intro p, .intro .ver { display:block; width:auto; margin:0 auto; text-align:center; }
+  .intro { display:block; text-align:center; padding:56px 20px 56px; }
+  .intro h1, .intro p { display:block; width:auto; margin:0 auto; text-align:center; }
+  .intro .ver { display:block; margin:20px auto 0; text-align:center; }
   .intro p { margin-top:6px; }
-  .intro h1 { font-size:28px; line-height:36px; font-weight:800; letter-spacing:-0.03em; color:#fff; }
-  .intro p { margin-top:6px; font-size:14px; color:rgba(255,255,255,.88); }
-  .dl { display:block; width:fit-content; margin:20px auto 0; background:#fff; color:var(--navy); font-weight:800; font-size:15px;
+  .intro h1 { font-size:30px; line-height:40px; font-weight:800; letter-spacing:-0.03em; color:#fff; }
+  .intro p { margin-top:10px; font-size:14px; color:rgba(255,255,255,.88); }
+  .dl { display:block; width:fit-content; margin:28px auto 0; background:#fff; color:var(--navy); font-weight:800; font-size:15px;
     padding:13px 30px; border-radius:12px; text-decoration:none; text-align:center; }
   .dl:hover { background:var(--n2); }
   .dl small { display:block; font-weight:500; font-size:11px; color:var(--n5); margin-top:2px; }
-  .ver { margin:12px auto 0; text-align:center; font-size:11px; line-height:16px; color:rgba(255,255,255,.82); }
-  main { max-width:1180px; margin:0 auto; padding:26px 22px 8px; }
+  .ver { font-size:11px; line-height:16px; color:rgba(255,255,255,.82); }
+  main { max-width:1180px; margin:0 auto; padding:40px 22px 14px; }
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:stretch; }
   @media (max-width:1040px){ .grid { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:660px){ .grid { grid-template-columns:1fr; } }
-  section { background:#fff; border:1px solid var(--n3); border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; }
+  section { background:#fff; border:1px solid var(--n3); border-radius:12px; padding:24px 26px; display:flex; flex-direction:column; }
   h2 { font-size:18px; line-height:26px; font-weight:700; letter-spacing:-0.03em; margin-bottom:10px; padding-bottom:9px; border-bottom:1px solid var(--n3); display:flex; align-items:center; gap:9px; }
   /* 레터 칩 — 28px 정사각 radius 7, 브랜드색 배경 + 흰 글자 */
   h2 .chip { width:28px; height:28px; border-radius:7px; background:var(--navy); color:#fff;
