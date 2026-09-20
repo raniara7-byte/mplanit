@@ -152,9 +152,32 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 .foot{position:absolute;left:56px;right:56px;bottom:16px;display:flex;align-items:center;justify-content:space-between;
   font-size:10.5px;color:var(--tx3);border-top:1px solid var(--line);padding-top:9px}
 .foot b{font-weight:700;color:var(--tx2)}
+/* 좌우 클릭 영역 + 큰 화살표 */
+.edge{position:fixed;top:0;bottom:64px;width:20%;z-index:8;cursor:pointer;display:flex;align-items:center;
+  background:transparent;border:0;padding:0 18px;opacity:0;transition:opacity .18s}
+.edge:hover{opacity:1}
+.edge.l{left:0;justify-content:flex-start}
+.edge.r{right:0;justify-content:flex-end}
+.edge span{width:44px;height:44px;border-radius:50%;background:rgba(27,70,139,.9);color:#fff;font-size:22px;
+  display:grid;place-items:center;box-shadow:0 4px 14px rgba(15,27,46,.3);line-height:1}
+#hint{position:fixed;left:50%;bottom:62px;transform:translateX(-50%);z-index:9;font-size:12px;color:#fff;
+  background:rgba(15,27,46,.82);border-radius:999px;padding:7px 14px;transition:opacity .4s}
+/* 전체보기(그리드) 모드 */
+body.ov{overflow:auto}
+body.ov #stage{position:static;display:block;padding:26px 26px 86px}
+body.ov #deck{position:static;width:auto;height:auto;transform:none!important;
+  display:grid;gap:16px;justify-content:center}
+body.ov .slide{position:relative;inset:auto;opacity:1;visibility:visible;cursor:pointer;
+  border:1px solid var(--line2);box-shadow:0 8px 22px rgba(15,27,46,.18)}
+body.ov .slide:hover{box-shadow:0 0 0 10px rgba(57,155,193,.35),0 8px 22px rgba(15,27,46,.18)}
+body.ov .slide.is-active{box-shadow:0 0 0 10px rgba(27,70,139,.55),0 8px 22px rgba(15,27,46,.18)}
+body.ov .edge,body.ov #hint{display:none}
 #nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:13px;
   background:#fff;border:1px solid var(--line2);border-radius:999px;padding:7px 13px;z-index:9;box-shadow:0 6px 20px rgba(15,27,46,.12)}
 #nav button{background:none;border:0;color:var(--navy);font-size:16px;cursor:pointer;padding:0 5px;line-height:1}
+#nav .lbl{font-size:11.5px;font-weight:800;color:var(--navy);background:var(--chip);border-radius:7px;
+  padding:6px 11px;cursor:pointer;border:1px solid var(--line2);line-height:1}
+#nav .lbl:hover{background:#DCE8F8}
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:var(--line2);cursor:pointer;transition:.2s}
 .dots i.on{background:var(--navy);width:18px;border-radius:99px}
@@ -162,6 +185,10 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 @page{size:1280px 720px;margin:0}
 @media print{
   body{background:#fff;overflow:visible}
+  .edge,#hint{display:none}
+  body.ov #stage{padding:0}
+  body.ov #deck{display:block}
+  body.ov .slide{zoom:1;box-shadow:none}
   #stage{position:static}#deck{transform:none!important;width:auto;height:auto}#nav{display:none}
   .slide{position:relative;opacity:1!important;visibility:visible!important;border-radius:0;box-shadow:none;
     page-break-after:always;break-after:page}
@@ -618,9 +645,14 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 
 </div></div>
 
+<button class="edge l" id="edgePrev" aria-label="이전 장표"><span>‹</span></button>
+<button class="edge r" id="edgeNext" aria-label="다음 장표"><span>›</span></button>
+<div id="hint">화면 클릭 · ← → 키로 이동 &nbsp;|&nbsp; 전체보기 G</div>
+
 <div id="nav">
   <button id="prev" aria-label="이전">‹</button><div class="dots" id="dots"></div>
   <span id="count">01 / 08</span><button id="next" aria-label="다음">›</button>
+  <span class="lbl" id="ovBtn">전체보기</span>
 </div>
 
 <script>
@@ -633,15 +665,56 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
     slides.forEach(function(s,k){s.classList.toggle('is-active',k===i)});
     [].slice.call(dots.children).forEach(function(d,k){d.classList.toggle('on',k===i)});
     count.textContent=pad(i+1)+' / '+pad(slides.length);}
-  function fit(){document.getElementById('deck').style.transform='scale('+Math.min((innerWidth-40)/1280,(innerHeight-80)/720)+')';}
+  function fit(){
+    if(document.body.classList.contains('ov'))return;
+    document.getElementById('deck').style.transform='scale('+Math.min((innerWidth-40)/1280,(innerHeight-80)/720)+')';
+  }
+  // 전체보기(그리드) 토글 — 썸네일 클릭 시 해당 장표로 이동
+  var ovBtn=document.getElementById('ovBtn');
+  function overview(on){
+    var b=document.body;
+    if(on===undefined)on=!b.classList.contains('ov');
+    b.classList.toggle('ov',on);
+    ovBtn.textContent=on?'닫기':'전체보기';
+    if(on){var d=document.getElementById('deck');d.style.transform='none';ovFit();}
+    else{slides.forEach(function(sl){sl.style.zoom='';});fit();go(i);}
+  }
+  function ovFit(){
+    var d=document.getElementById('deck');
+    var W=innerWidth-56, cols=W>=1240?4:(W>=880?3:2), gap=16;
+    var z=(W-gap*(cols-1))/(cols*1280);
+    d.style.gridTemplateColumns='repeat('+cols+',max-content)';
+    slides.forEach(function(sl){sl.style.zoom=z;});
+  }
+  ovBtn.onclick=function(){overview();};
+  slides.forEach(function(sl,n){
+    sl.addEventListener('click',function(e){
+      if(!document.body.classList.contains('ov'))return;
+      e.stopPropagation(); go(n); overview(false);
+    });
+  });
   document.getElementById('prev').onclick=function(){go(i-1)};
   document.getElementById('next').onclick=function(){go(i+1)};
+  document.getElementById('edgePrev').onclick=function(){go(i-1)};
+  document.getElementById('edgeNext').onclick=function(){go(i+1)};
+  // 화면 아무 곳이나 클릭 — 오른쪽 넓게 다음, 왼쪽 좁게 이전
+  document.addEventListener('click',function(e){
+    if(document.body.classList.contains('ov'))return;
+    if(e.target.closest('#nav')||e.target.closest('.edge'))return;
+    go(e.clientX < innerWidth*0.28 ? i-1 : i+1);
+  });
+  // 안내 문구는 5초 뒤 숨김
+  setTimeout(function(){var h=document.getElementById('hint');if(h){h.style.opacity=0;setTimeout(function(){h.remove();},500);}},5000);
   addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')go(i+1);
     if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);
-    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);});
-  addEventListener('resize',fit);
-  addEventListener('wheel',function(e){if(Math.abs(e.deltaY)<24)return;
+    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
+    if(e.key==='g'||e.key==='G')overview();
+    if(e.key==='Escape')overview(false);});
+  addEventListener('resize',function(){ if(document.body.classList.contains('ov'))ovFit(); else fit(); });
+  addEventListener('wheel',function(e){
+    if(document.body.classList.contains('ov'))return;
+    if(Math.abs(e.deltaY)<24)return;
     if(!go._t||Date.now()-go._t>420){go._t=Date.now();go(i+(e.deltaY>0?1:-1));}},{passive:true});
   fit();go(0);
 })();
