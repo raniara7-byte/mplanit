@@ -120,7 +120,10 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 .mapc .bd div{font-size:11px;color:var(--tx);line-height:1.45;padding:4px 0;border-bottom:1px dashed var(--line)}
 .mapc .bd div:last-child{border:0}
 .mapc .bd b{color:var(--navy);font-weight:700}
-.stage-row{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:12px}
+.stage-row{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:6px}
+.groupbar{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:14px}
+.gb{background:var(--chip);border-radius:7px;padding:7px 0;text-align:center;font-size:12.5px;font-weight:800;color:var(--navy)}
+.gb small{font-size:9.5px;font-weight:700;color:var(--tx3);letter-spacing:.1em;margin-left:5px}
 .stg{font-size:11.5px;font-weight:800;color:var(--sky);text-align:center;letter-spacing:.06em}
 .dataflow{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:13px 16px;
   display:flex;align-items:center;gap:9px}
@@ -208,14 +211,15 @@ body.ov .edge,body.ov #hint{display:none}
 
   <h1>제작 · 노출 · 판매 · 성과<br/><span>광고 실무 전 과정의 AI 전환</span></h1>
   <p class="lead"><b>M Ai Platform</b> — AI 그로스 통합 플랫폼(소재 제작 · 실시간 통합 리포트) &nbsp;+&nbsp;
-  <b>AI LAB</b> — GEO Metric Care(SEO + GEO 통합 분석). 솔루션 6종, 1인 기업까지 사용</p>
+  <b>AI LAB</b> — GEO Metric Care(SEO + GEO 통합 분석).<br/>
+  AI 솔루션 5종 + 이를 떠받치는 <b>데이터 인프라(MI)</b> — 수집·정규화·집계까지 자체 기술</p>
 
   <div class="flow">
     <span class="fl">제작<small>Banner Fit · Reels Studio</small></span><span class="arw">›</span>
     <span class="fl">노출<small>GEO Metric Care</small></span><span class="arw">›</span>
     <span class="fl">판매<small>커머스허브</small></span><span class="arw">›</span>
     <span class="fl">성과<small>애드리포트</small></span><span class="arw">›</span>
-    <span class="fl">운영<small>MI 솔루션</small></span>
+    <span class="fl" style="background:#EEF2F7;color:#334155">기반<small>MI · 데이터 인프라</small></span>
   </div>
 
   <div class="solgrid">
@@ -250,10 +254,10 @@ body.ov .edge,body.ov #hint{display:none}
       <span class="kv">성과 이상 즉시 알림</span>
     </div>
     <div class="sol">
-      <div class="tp"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><path d="M5 16l7 5 7-5"/></svg></span><h3>MI 솔루션</h3></div>
-      <span class="en">Marketing Intelligence</span>
-      <p>네이버 검색광고 자동입찰 · 다계정 대량 통합 리포트</p>
-      <span class="kv">운영 자동화 · 공수 대체</span>
+      <div class="tp"><span class="ic" style="background:#334155"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><ellipse cx="12" cy="5.5" rx="7" ry="2.8"/><path d="M5 5.5v13c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-13"/><path d="M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/></svg></span><h3>MI 솔루션</h3></div>
+      <span class="en" style="color:#64748B">Data Infra · AI 솔루션 아님</span>
+      <p>네이버 자동입찰 · 대량 통합 리포트 · 통합 데이터 분석 · 인프라 구성</p>
+      <span class="kv" style="color:#334155">엠플랜잇 기술 기반</span>
     </div>
   </div>
 
@@ -263,8 +267,9 @@ body.ov .edge,body.ov #hint{display:none}
     <div class="st"><b>0.8~1.3%</b><span>AI 검색 클릭률(구글 29%) — 인용 없으면 유입 없음</span></div>
   </div>
 <div class="medias" style="margin-top:10px"><span class="mlabel">연동 광고 매체 14</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버 검색</span><span class="m txt" style="--c:#03C75A">GFA</span><span class="m txt" style="--c:#03C75A">NOSP</span><span class="m txt" style="--c:#FFCD00">카카오모먼트</span><span class="m txt" style="--c:#FFCD00">카카오페이</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#6B7A90">모비온</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="mlabel" style="margin-left:8px">판매 채널 7</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
-  <p class="src">출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용</p>
-  <div class="foot"><span><b>엠플랜잇 AIU본부</b> · M Ai Platform · AI LAB · mplanit.co.kr</span><span>01 / 08</span></div>
+  <p class="src"><b style="color:var(--tx2)">공개 프로젝트</b> 삼성전자 DS · AIA생명 · 쿠쿠전자 &nbsp;|&nbsp; <b style="color:var(--tx2)">공식 파트너</b> 네이버 · 카카오 · 크리테오 &nbsp;— 엠플랜잇 공식 홈페이지 공개 기준(광고 실행 경험이며 AI 솔루션 도입 실적과는 별개)<br/>
+  출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용</p>
+  <div class="foot"><span><b>엠플랜잇 AIU본부</b> · M Ai Platform · AI LAB · mplanit.co.kr</span><span>01 / 09</span></div>
 </section>
 
 <!-- ===== 02 AI LAB 통합 ===== -->
@@ -274,12 +279,17 @@ body.ov .edge,body.ov #hint{display:none}
     <div>
       <span class="kicker">Solution Architecture</span>
       <h2>엠플랜잇 AI 솔루션 통합 구조 — <em>소재에서 매출까지 한 줄로</em></h2>
-      <p class="sub"><b>M Ai Platform</b> 제작·성과·운영 &nbsp;·&nbsp; <b>AI LAB</b> AI 검색 최적화 &nbsp;·&nbsp; <b>커머스허브</b> 판매 — 6종</p>
+      <p class="sub"><b>AI 솔루션 5종</b>(M Ai Platform · AI LAB · 커머스허브) + <b>데이터 인프라 1</b>(MI) — 수집부터 판단까지 단일 기준</p>
     </div>
     <span class="urlchip">통합 요약 1장</span>
   </div>
 
-  <div class="stage-row"><span class="stg">01 제작</span><span class="stg">02 제작</span><span class="stg">03 노출</span><span class="stg">04 판매</span><span class="stg">05 성과</span><span class="stg">06 운영</span></div>
+  <div class="groupbar">
+    <span class="gb" style="grid-column:span 2">만들고 <small>CREATE</small></span>
+    <span class="gb" style="grid-column:span 2">관리하고 <small>MANAGE</small></span>
+    <span class="gb" style="grid-column:span 2">운영·성과 <small>OPERATE</small></span>
+  </div>
+  <div class="stage-row"><span class="stg">01 제작</span><span class="stg">02 제작</span><span class="stg">03 노출</span><span class="stg">04 판매</span><span class="stg">05 성과</span><span class="stg" style="color:#64748B">기반 · 데이터 인프라</span></div>
   <div class="map" style="margin-top:6px">
     <div class="mapc">
       <div class="hd">배너핏 <i>M Ai</i></div>
@@ -327,12 +337,12 @@ body.ov .edge,body.ov #hint{display:none}
       </div>
     </div>
     <div class="mapc">
-      <div class="hd">MI 솔루션 <i>준비</i></div>
+      <div class="hd" style="background:#334155">MI 솔루션 <i>Infra</i></div>
       <div class="bd">
         <div>네이버 <b>자동입찰</b></div>
-        <div>순위 목표 · 시간대 규칙</div>
         <div><b>다계정</b> 통합 리포트</div>
-        <div>정기 자동 발송</div>
+        <div>통합 데이터 <b>분석</b></div>
+        <div>수집 · 정규화 인프라</div>
       </div>
     </div>
   </div>
@@ -346,14 +356,14 @@ body.ov .edge,body.ov #hint{display:none}
   </div>
 
   <div class="target">
-    <div class="tg"><b>브랜드 광고주</b><span>캠페인 소재 대량 생성 · 매체별 성과 통합 리포트 · AI 검색 브랜드 노출 관리</span></div>
-    <div class="tg"><b>그로스 · 중소 광고주</b><span>소재 제작비 절감 · 채널별 ROAS 비교 · 성과 이상 즉시 알림</span></div>
-    <div class="tg"><b>소상공인 · 1인 기업</b><span>디자이너 없이 배너·영상 자체 제작 · 마켓 주문/정산 단일 화면 관리</span></div>
+    <div class="tg"><b>브랜드 · 마케팅팀</b><span><b style="color:var(--sky)">배너핏 + 릴스 + GEO 케어 + 애드리포트</b><br/>캠페인 제작과 성과 관리 강화 · AI 검색 노출 준비</span></div>
+    <div class="tg"><b>그로스 · 커머스팀</b><span><b style="color:var(--sky)">커머스허브 + MI + 애드리포트</b><br/>판매 관리 · 검색광고 운영 · 보고 효율화</span></div>
+    <div class="tg"><b>소상공인 · 1인 기업</b><span><b style="color:var(--sky)">확장 방향</b><br/>쉬운 입력 · 선택형 직접 이용 (출시 시점·요금 별도 확정)</span></div>
   </div>
 
   <div class="quote" style="margin-top:14px">판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인
     <small>채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다 · 카카오쇼핑 API 연동 신청 자료(2026.09)</small></div>
-  <div class="foot"><span><b>Solution Architecture</b> · 통합 구조 요약</span><span>02 / 08</span></div>
+  <div class="foot"><span><b>Solution Architecture</b> · 통합 구조 요약</span><span>02 / 09</span></div>
 </section>
 
 <!-- ===== 03 솔루션 이미지맵 ===== -->
@@ -363,7 +373,7 @@ body.ov .edge,body.ov #hint{display:none}
     <div>
       <span class="kicker">SOLUTION MAP</span>
       <h2>솔루션 이미지맵 — <em>화면으로 보는 6종</em></h2>
-      <p class="sub">제작 → 노출 → 판매 → 성과 → 운영 · M Ai Platform / AI LAB / 커머스허브 구성</p>
+      <p class="sub">제작 → 노출 → 판매 → 성과 · AI 솔루션 5종 + 데이터 인프라(MI) 1</p>
     </div>
     <span class="urlchip">한 장 요약 · 배포용</span>
   </div>
@@ -412,14 +422,14 @@ body.ov .edge,body.ov #hint{display:none}
     <div class="tile">
       <div class="thumb ph">MI 솔루션 화면 — 준비 중</div>
       <div class="tb">
-        <div class="tt"><span class="stg2">운영</span><h4>MI 솔루션</h4></div>
-        <p>네이버 검색광고 자동입찰 · 다계정 대량 통합 리포트</p>
-        <span class="u">운영 자동화 · 공수 대체</span>
+        <div class="tt"><span class="stg2" style="background:#334155">기반</span><h4>MI 솔루션</h4></div>
+        <p>자동입찰 · 대량 통합 리포트 · 통합 데이터 분석 · 인프라 구성 (AI 솔루션 아님)</p>
+        <span class="u">엠플랜잇 자체 기술 기반</span>
       </div>
     </div>
   </div>
 
-  <div class="foot"><span><b>Solution Map</b> · 화면 기준 요약</span><span>03 / 08</span></div>
+  <div class="foot"><span><b>Solution Map</b> · 화면 기준 요약</span><span>03 / 09</span></div>
 </section>
 
 <!-- ===== 03 Banner Fit ===== -->
@@ -452,7 +462,7 @@ body.ov .edge,body.ov #hint{display:none}
       <div class="shot" style="left:70px;top:196px;width:600px;z-index:3"><img src="assets/bannerfit-editor.webp" alt="Banner Fit 레이어 편집" /><span class="cap">③ 레이어 편집 · 사이즈 변형 · 다운로드</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>Banner Fit</b> · 배너핏</span><span>04 / 08</span></div>
+  <div class="foot"><span><b>Banner Fit</b> · 배너핏</span><span>04 / 09</span></div>
 </section>
 
 <!-- ===== 04 Reels Studio ===== -->
@@ -485,7 +495,7 @@ body.ov .edge,body.ov #hint{display:none}
       <div class="shot" style="left:60px;top:234px;width:520px;z-index:3"><img src="assets/reels-video.webp" alt="Reels Studio 영상 엔진" /><span class="cap">③ 배너 영상 · VEO 3.1 / Gemini Omni</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>Reels Studio</b> · 릴스 스튜디오</span><span>05 / 08</span></div>
+  <div class="foot"><span><b>Reels Studio</b> · 릴스 스튜디오</span><span>05 / 09</span></div>
 </section>
 
 <!-- ===== 05 GEO ===== -->
@@ -508,19 +518,20 @@ body.ov .edge,body.ov #hint{display:none}
         <div class="pt"><span class="n">03</span><div><h4>진단 범위</h4><p>ChatGPT · Gemini · Perplexity · <b>네이버 AI 브리핑</b>(Yeti 접근 · 서치어드바이저).</p></div></div>
         <div class="pt"><span class="n">04</span><div><h4>항목별 현재값 · 권장 기준</h4><p>인용 신뢰도(E-E-A-T 70점 이상) · 통계 포함 · 스키마 · 엔티티 연결성.</p></div></div>
       </div>
-      <div class="quote" style="margin-top:16px">고객은 AI에게 묻고 있는데,<br/>우리 브랜드는 AI 답변에 등장하고 있나요?</div>
+      <div class="quote" style="margin-top:14px">고객은 AI에게 묻고 있는데,<br/>우리 브랜드는 AI 답변에 등장하고 있나요?</div>
       <div class="risks">
         <div class="rk"><b>제로클릭</b><span>오가닉 유입 20~30% 급감</span></div>
         <div class="rk"><b>추천 누락</b><span>AI 답변 후보군에서 제외</span></div>
         <div class="rk"><b>정보 왜곡</b><span>잘못된 정보로 신뢰 하락</span></div>
       </div>
+      <p class="note" style="margin-top:10px">점수는 자체 진단 기준입니다 — 실제 AI 답변 노출·인용률이나 검색순위를 뜻하지 않습니다.</p>
     </div>
     <div class="shots">
       <div class="shot" style="left:20px;top:0;width:470px;z-index:1"><img src="assets/geo-landing.webp" alt="GEO Metric Care 진단 화면" /><span class="cap">① URL 입력 → 분석 시작</span></div>
       <div class="shot" style="left:130px;top:186px;width:560px;z-index:2"><img src="assets/geo-result.webp" alt="GEO Metric Care 분석 결과" /><span class="cap">② 분석 결과 — 자사 진단(종합 84 / SEO 95 / GEO 72)</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>AI LAB</b> · GEO Metric Care Solution</span><span>06 / 08</span></div>
+  <div class="foot"><span><b>AI LAB</b> · GEO Metric Care Solution</span><span>06 / 09</span></div>
 </section>
 
 <!-- ===== 06 커머스허브 + 애드리포트 ===== -->
@@ -544,7 +555,7 @@ body.ov .edge,body.ov #hint{display:none}
           <div><small>주문 수집</small><b>매시</b></div>
           <div><small>정산 수집</small><b>06:30</b></div>
         </div>
-        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
+        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#FFCD00">톡스토어 <i style="font-style:normal;color:var(--tx3);font-weight:600">승인 대기</i></span></div>
         <div class="list" style="margin-top:8px">
           <div class="li"><i>·</i><span><b>메뉴</b> — 정산 · 매출 · 재고 · 배송 · 광고비 · 설정</span></div>
         </div>
@@ -562,7 +573,8 @@ body.ov .edge,body.ov #hint{display:none}
           <div class="li"><i>·</i><span><b>리포트</b> — 통합 대시보드 · 목표 현황 · 실시간 현황 · 소재/키워드 분석</span></div>
         </div>
       </div>
-      <p class="note" style="margin-top:9px">화면 — 운영 중 애드리포트 실제 캡처. 광고주명·금액·건수 마스킹 처리.</p>
+      <p class="note" style="margin-top:9px">화면 — 운영 중 애드리포트 실제 캡처(수치는 캡처 시점 기준, 광고주명·금액 마스킹).<br/>
+      채널·매체별 연동 범위와 집계 주기가 다르며, 판매 매출과 광고 기여 성과는 구분해 집계합니다.</p>
     </div>
 
     <div class="shots" style="height:410px">
@@ -578,35 +590,45 @@ body.ov .edge,body.ov #hint{display:none}
 
   <div class="foot">
     <span>출처 · Similarweb AI Search Stats 2026 · OpenAI(2026.07) · 크몽 숏폼 단가 가이드 · 엠플랜잇 운영 자료(2026.09)</span>
-    <span>07 / 08</span>
+    <span>07 / 09</span>
   </div>
 </section>
 
-<!-- ===== 08 MI 솔루션 ===== -->
+<!-- ===== 08 MI 솔루션 / 데이터 인프라 ===== -->
 <section class="slide">
   <div class="rule"></div>
   <div class="shead">
     <div>
-      <span class="kicker">06 Operation · M Ai Platform</span>
-      <h2>MI 솔루션 — <em>네이버 자동입찰 · 대량 통합 리포트</em></h2>
-      <p class="sub">외부 입찰관리 툴(애드몬스터 유형) 기능의 사내 내재화 · 애드리포트 데이터와 동일 기준</p>
+      <span class="kicker" style="color:#64748B">TECH BASE · 데이터 인프라 (AI 솔루션 아님)</span>
+      <h2>MI 솔루션 — <em>자동입찰 · 대량 리포트, 그리고 그 아래 인프라</em></h2>
+      <p class="sub">매체·마켓·전환 데이터를 한 기준으로 모으는 수집·정규화·집계 구조 — 엠플랜잇 자체 구축</p>
     </div>
-    <span class="urlchip">Marketing Intelligence</span>
+    <span class="urlchip" style="background:#EEF2F7;color:#334155;border-color:#D7DEE8">MI Solution · Data Infra</span>
   </div>
 
   <div class="cols">
     <div>
       <div class="pts">
-        <div class="pt"><span class="n">01</span><div><h4>네이버 검색광고 자동입찰</h4><p>키워드 <b>순위 목표</b> 기반 입찰 조정 · 시간대/요일 규칙 · 예산 소진 제어.</p></div></div>
+        <div class="pt"><span class="n">01</span><div><h4>네이버 검색광고 자동입찰</h4><p>키워드 <b>순위 목표</b> 기반 입찰 조정 · 시간대/요일 규칙 · 예산 소진 제어. 애드몬스터 유형 기능.</p></div></div>
         <div class="pt"><span class="n">02</span><div><h4>대량 통합 리포트</h4><p><b>다계정 · 다광고주</b> 실적 일괄 수집 · 키워드 단위 대량 추출 · 정기 자동 발송.</p></div></div>
-        <div class="pt"><span class="n">03</span><div><h4>운영 공수 대체</h4><p>수기 입찰 조정 · 리포트 취합 제거. 외부 입찰관리 툴 구독 대체.</p></div></div>
-        <div class="pt"><span class="n">04</span><div><h4>사내 데이터 연동</h4><p>애드리포트 성과 · 커머스허브 매출과 <b>같은 기준</b>으로 결합.</p></div></div>
+        <div class="pt"><span class="n">03</span><div><h4>통합 데이터 분석</h4><p>매체 광고비 · 마켓 매출 · 전환 데이터를 <b>단일 지표 체계</b>로 결합. 광고주·브랜드·상품 단위 교차 분석.</p></div></div>
+        <div class="pt"><span class="n">04</span><div><h4>인프라 구성</h4><p>API 수집 스케줄러 · 정규화 · 적재 · 권한 분리까지 <b>직접 설계·운영</b>. 외부 솔루션 의존 없음.</p></div></div>
       </div>
-      <div class="quote" style="margin-top:16px">입찰은 자동으로, 리포트는 일괄로<small>운영자는 전략 판단에만 개입</small></div>
-      <p class="note" style="margin-top:10px">기능 범위·오픈 일정은 내부 확정 후 갱신 — 현재 장표는 개발 방향 기준.</p>
+      <div class="quote" style="margin-top:16px;border-left-color:#334155">AI 솔루션이 올라서는 바닥<small>데이터를 모으고 맞추는 인프라가 엠플랜잇의 기술 기반입니다</small></div>
+      <p class="note" style="margin-top:10px">MI는 AI 기능이 아닌 <b>운영 자동화·데이터 기술</b> 영역입니다. 기능 범위·오픈 일정은 내부 확정 후 갱신.<br/>
+      공식 홈페이지 Solution 페이지에는 <b>M Ai Platform · MARS</b>(통합 리포트 분석 · 리포트 자동화)로 소개되어 있으며, 이 장표의 MI 명칭과 자동입찰 설명은 사내 제공 정보 기준입니다.</p>
     </div>
 
     <div class="mi">
+      <div class="mibox" style="background:linear-gradient(180deg,#F8FAFD,#EFF3F8)">
+        <h4 style="color:#334155">데이터 파이프라인 — 수집에서 판단까지</h4>
+        <div class="mistep">
+          <div class="b"><b>수집</b><span>광고 14 · 마켓 7 API</span></div><span class="arw">›</span>
+          <div class="b"><b>정규화</b><span>매체·채널 기준 통일</span></div><span class="arw">›</span>
+          <div class="b"><b>적재 · 집계</b><span>일/캠페인/키워드/SKU</span></div><span class="arw">›</span>
+          <div class="b"><b>활용</b><span>리포트 · 입찰 · ROAS</span></div>
+        </div>
+      </div>
       <div class="mibox">
         <h4>자동입찰 — 목표 기반 반복 조정</h4>
         <div class="mistep">
@@ -624,23 +646,65 @@ body.ov .edge,body.ov #hint{display:none}
           <div class="b"><b>자동 발송</b><span>정기 리포트 · 파일</span></div>
         </div>
       </div>
-      <div class="mibox" style="background:linear-gradient(180deg,#F8FBFF,#EEF4FC)">
-        <h4>연결 구조</h4>
-        <div class="mistep">
-          <div class="b"><b>MI</b><span>입찰 · 대량 리포트</span></div><span class="arw">›</span>
-          <div class="b"><b>애드리포트</b><span>매체 성과 · ROAS</span></div><span class="arw">›</span>
-          <div class="b"><b>커머스허브</b><span>채널 매출</span></div>
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="target" style="margin-top:14px">
-    <div class="tg"><b>구독 비용 대체</b><span>외부 입찰관리 툴 이용료 없이 사내 계정으로 운영</span></div>
-    <div class="tg"><b>데이터 단절 없음</b><span>입찰·리포트·매출이 애드리포트/커머스허브와 같은 기준</span></div>
-    <div class="tg"><b>광고주 단위 권한</b><span>사업자·브랜드·담당자 권한 체계 그대로 적용</span></div>
+    <div class="tg"><b>외부 툴 구독 대체</b><span>입찰관리 툴 이용료 없이 사내 인프라로 운영</span></div>
+    <div class="tg"><b>데이터 단절 없음</b><span>입찰 · 리포트 · 매출이 애드리포트/커머스허브와 같은 기준</span></div>
+    <div class="tg"><b>확장 기반</b><span>새 매체·마켓 추가 시 수집 계층만 붙이면 전 솔루션에 반영</span></div>
   </div>
-  <div class="foot"><span><b>MI 솔루션</b> · Marketing Intelligence</span><span>08 / 08</span></div>
+
+  <div class="foot"><span><b>MI 솔루션</b> · 데이터 인프라 · 엠플랜잇 자체 기술</span><span>08 / 09</span></div>
+</section>
+
+<!-- ===== 09 제공 범위 · 표기 기준 ===== -->
+<section class="slide">
+  <div class="rule"></div>
+  <div class="shead">
+    <div>
+      <span class="kicker" style="color:#64748B">APPENDIX · 근거와 표기 기준</span>
+      <h2>제공 범위와 표기 기준 — <em>과장 없이, 확인된 것만</em></h2>
+      <p class="sub">장표에 쓴 화면·수치·명칭의 출처와, 오해를 막기 위한 표기 원칙</p>
+    </div>
+    <span class="urlchip" style="background:#EEF2F7;color:#334155;border-color:#D7DEE8">2026.09 기준</span>
+  </div>
+
+  <div class="pipe" style="margin-top:20px">
+    <div class="panel">
+      <h3 style="font-size:16px">자료 근거</h3>
+      <p class="ps">이 장표에 쓰인 화면과 수치의 출처</p>
+      <div class="list" style="margin-top:12px">
+        <div class="li"><i>·</i><span><b>제품 화면</b> — 사내 솔루션 소개 PPTX(배너핏 3장 · 릴스 스튜디오 4장 · GEO 2장), AD_report 화면 4종, 커머스허브 캡처</span></div>
+        <div class="li"><i>·</i><span><b>연동 사양</b> — 카카오쇼핑 API 서비스소개서(판매 채널 7 · 광고 매체 14 · 수집 주기)</span></div>
+        <div class="li"><i>·</i><span><b>GEO 기준</b> — AI 최적화 GEO 가이드(AX본부): 점수 해석 · 3대 리스크 · 개선 우선순위</span></div>
+        <div class="li"><i>·</i><span><b>MI</b> — 사내 제공 정보(네이버 자동입찰 · 대량 통합 리포트). 공식 Solution 페이지는 M Ai Platform · MARS로 소개</span></div>
+        <div class="li"><i>·</i><span><b>시장 수치</b> — OpenAI(2026.07) · Similarweb AI Search Stats 2026 · 국내 광고업계 보도 · 크몽 숏폼 단가 가이드</span></div>
+        <div class="li"><i>·</i><span><b>공개 프로젝트 · 파트너</b> — 엠플랜잇 공식 홈페이지 공개 기준</span></div>
+      </div>
+    </div>
+
+    <div class="panel" style="background:linear-gradient(180deg,#FFFBF5,#FDF6EC);border-color:#F0E2CC">
+      <h3 style="font-size:16px">표기 기준</h3>
+      <p class="ps">제안·설명 시 지켜야 할 범위</p>
+      <div class="list" style="margin-top:12px">
+        <div class="li"><i style="color:#D97706">!</i><span>전체 구조도는 <b>서비스 포트폴리오</b>입니다 — 솔루션 간 자동 통합 아키텍처를 뜻하지 않습니다</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>GEO 점수는 <b>자체 진단 기준</b>입니다 — AI 답변 노출·인용률이나 검색순위가 아닙니다</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>화면 수치는 <b>캡처 시점 데이터</b>이며 광고주명·금액은 마스킹했습니다 — 현재 성과가 아닙니다</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>채널·매체별 <b>연동 범위와 집계 주기가 다릅니다</b> — 판매 매출과 광고 기여 성과는 구분합니다</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>카카오쇼핑(톡스토어)은 <b>연동 승인 대기</b> 상태입니다</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>MI 기능 범위·오픈 일정, 소상공인용 상품은 <b>확정 전</b>입니다 — 도입 상담에서 확정</span></div>
+        <div class="li"><i style="color:#D97706">!</i><span>광고주 프로젝트 수행 경험과 <b>AI 솔루션 도입 실적은 별개</b>입니다</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing" style="margin-top:16px;background:linear-gradient(90deg,#334155,#475569)">
+    <div><b>기능·연동·운영 범위는 도입 상담에서 확정합니다</b><br/><span>기술을 고르고, 브랜드에 맞추고, 실행을 돕습니다</span></div>
+    <span class="cta" style="color:#334155">mplanit@mplanit.co.kr</span>
+  </div>
+
+  <div class="foot"><span><b>Appendix</b> · 근거와 표기 기준</span><span>09 / 09</span></div>
 </section>
 
 </div></div>
@@ -651,7 +715,7 @@ body.ov .edge,body.ov #hint{display:none}
 
 <div id="nav">
   <button id="prev" aria-label="이전">‹</button><div class="dots" id="dots"></div>
-  <span id="count">01 / 08</span><button id="next" aria-label="다음">›</button>
+  <span id="count">01 / 09</span><button id="next" aria-label="다음">›</button>
   <span class="lbl" id="ovBtn">전체보기</span>
 </div>
 
