@@ -66,6 +66,50 @@ function shot(s, name, x, y, w, caption){
       isTextBox:true, margin:0, valign:'middle', fontFace:H, fontSize:7.5, color:TX2 });
   }
 }
+function quote(s, x, y, w, line, sub){
+  const h = sub ? P(48) : P(40);
+  s.addShape(pres.ShapeType.rect, { x, y, w, h, fill:{ color:BG2 }, line:{ color:BG2 } });
+  s.addShape(pres.ShapeType.rect, { x, y, w:P(3), h, fill:{ color:NAVY }, line:{ color:NAVY } });
+  s.addText(line, { x:x+P(14), y:y+P(7), w:w-P(26), h:P(18), isTextBox:true, margin:0, fontFace:H, fontSize:10, color:NAVY });
+  if (sub) s.addText(sub, { x:x+P(14), y:y+P(26), w:w-P(26), h:P(16), isTextBox:true, margin:0,
+    fontFace:B, fontSize:7.5, color:TX2 });
+}
+// 매체/채널 칩 — 로고 보유 매체는 아이콘, 그 외는 브랜드 컬러 점
+function medias(s, x, y, items, maxW){
+  const path = require('path');
+  let cx = x, cy = y;
+  items.forEach(function(it){
+    if (it.label){   // 구분 라벨
+      const lw = P(it.label.length*7.4 + 8);
+      s.addText(it.label, { x:cx, y:cy, w:lw, h:P(22), isTextBox:true, margin:0, valign:'middle',
+        fontFace:H, fontSize:7.5, color:TX3 });
+      cx += lw + P(4); return;
+    }
+    const w = P(it.t.length*7.6 + (it.icon ? 30 : 24));
+    if (maxW && cx + w > x + maxW){ cx = x; cy += P(28); }
+    s.addShape(pres.ShapeType.roundRect, { x:cx, y:cy, w, h:P(22), rectRadius:0.1,
+      fill:{ color:'FFFFFF' }, line:{ color:LINE, width:0.75 } });
+    if (it.icon){
+      s.addImage({ path: path.join(__dirname, '..', 'assets', 'png', 'icon-'+it.icon+'.png'),
+        x:cx+P(7), y:cy+P(5.5), w:P(11), h:P(11) });
+      s.addText(it.t, { x:cx+P(21), y:cy, w:w-P(26), h:P(22), isTextBox:true, margin:0, valign:'middle',
+        fontFace:H, fontSize:7.5, color:TX });
+    } else {
+      s.addShape(pres.ShapeType.ellipse, { x:cx+P(8), y:cy+P(8), w:P(6), h:P(6),
+        fill:{ color:it.c }, line:{ color:it.c } });
+      s.addText(it.t, { x:cx+P(18), y:cy, w:w-P(24), h:P(22), isTextBox:true, margin:0, valign:'middle',
+        fontFace:H, fontSize:7.5, color:TX });
+    }
+    cx += w + P(6);
+  });
+  return cy + P(22);
+}
+const MEDIA_AD = [{t:'네이버',icon:'naver'},{t:'메타',icon:'meta'},{t:'Google Ads',icon:'googleads'},
+  {t:'틱톡',icon:'tiktok'},{t:'카카오',c:'FFCD00'},{t:'당근',c:'FF6F0F'},{t:'크리테오',c:'F76B15'},
+  {t:'타불라',c:'0B4F8A'},{t:'Apple Ads',icon:'apple'},{t:'토스애즈',c:'0064FF'},{t:'모비온',c:'6B7A90'}];
+const MEDIA_CH = [{t:'스마트스토어',icon:'naver'},{t:'쿠팡',c:'C4161C'},{t:'카페24',c:'1B5FAA'},
+  {t:'11번가',c:'FF0038'},{t:'토스쇼핑',c:'0064FF'},{t:'G마켓·옥션',c:'00A650'},{t:'톡스토어',c:'FFCD00'}];
+
 function chips(s, x, y, items){
   let cx = x;
   items.forEach(function(it){
@@ -145,8 +189,10 @@ function chips(s, x, y, items){
     s.addText(st[1], { x:x+P(12), y:P(560), w:P(360), h:P(26), isTextBox:true, margin:0,
       fontFace:B, fontSize:8, color:TX, lineSpacingMultiple:1.2 });
   });
-  s.addText('출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10)',
-    { x:P(56), y:P(596), w:P(1100), h:P(16), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
+  medias(s, P(56), P(596), [{label:'연동 광고 매체 14'}].concat(MEDIA_AD)
+    .concat([{label:'판매 채널 7'}]).concat(MEDIA_CH), P(1168));
+  s.addText('출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용',
+    { x:P(56), y:P(652), w:P(1168), h:P(14), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3 });
   foot(s, '엠플랜잇 AIU본부 · AI LAB · mplanit.co.kr', '01 / 06');
   s.addNotes('표지 — 솔루션 5종과 시장 근거 3가지. 제작·노출·판매·성과 흐름으로 설명.');
 })();
@@ -209,6 +255,8 @@ function chips(s, x, y, items){
     s.addText(t[1], { x:x+P(16), y:P(480), w:P(350), h:P(36), isTextBox:true, margin:0,
       fontFace:B, fontSize:8.5, color:TX, lineSpacingMultiple:1.3 });
   });
+  quote(s, P(56), P(540), P(1168), '판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인',
+    '채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다 · 카카오쇼핑 API 연동 신청 자료(2026.09)');
   foot(s, 'AI LAB · 통합 구조 요약', '02 / 06');
   s.addNotes('AI LAB 통합 요약 — 단독 1장으로도 사용 가능. 5개 솔루션의 역할, 데이터 연결, 대상별 활용.');
 })();
@@ -225,8 +273,9 @@ function chips(s, x, y, items){
   feature(s, fx, P(394), fw, '04', '생성 모델 선택', '이미지 Gemini(나노 바나나) · ChatGPT 2.0. 완성 시안은 영상 생성 탭으로 연결.');
   chips(s, fx, P(474), [{t:'크리에이티브 생성'},{t:'소재 사이즈 변형'},{t:'영상 생성'}]);
   chips(s, fx, P(504), [{t:'편집하기 · 프로젝트', gray:true}]);
-  s.addText('화면 — 운영 중인 Banner Fit 실제 캡처. 편집 화면 시안은 당사 집행 소재.',
-    { x:fx, y:P(548), w:fw, h:P(30), isTextBox:true, margin:0, fontFace:B, fontSize:7.5, color:TX3 });
+  quote(s, fx, P(536), fw, '한 번 입력으로 즉시 생성', '이미지 업로드와 요청 한 줄 → 배경 · 카피 · 레이아웃 시안 동시 산출');
+  s.addText('화면 — 운영 중 Banner Fit 실제 캡처. 편집 화면 시안은 당사 집행 소재.',
+    { x:fx, y:P(590), w:fw, h:P(26), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
   shot(s, 'bannerfit-form',   P(470), P(166), P(276), '① 라이트 모드 · 6단계 입력');
   shot(s, 'bannerfit-chat',   P(758), P(160), P(454), '② 에디터 모드 · 한 줄 지시');
   shot(s, 'bannerfit-editor', P(540), P(356), P(600), '③ 레이어 편집 · 사이즈 변형 · 다운로드');
@@ -245,8 +294,9 @@ function chips(s, x, y, items){
   feature(s, fx, P(394), fw, '04', '컷 승인형 렌더', '컷별 승인 · 재생성 후 VEO 3.1(1080p) 또는 Gemini Omni(720p)로 출력.');
   chips(s, fx, P(474), [{t:'쇼츠 9:16'},{t:'유튜브 16:9'},{t:'인스타 1:1'}]);
   chips(s, fx, P(504), [{t:'배너 영상 · 시작/엔드 프레임', gray:true}]);
+  quote(s, fx, P(536), fw, "'만들기'가 아니라 '다듬기'부터", 'AI가 대본·키프레임 포함 콘티 전체를 먼저 제안 · 승인한 컷만 과금');
   s.addText('참고 — 국내 숏폼 외주 단가 15만~200만원, 기간 2~3주(크몽 단가 가이드 기준).',
-    { x:fx, y:P(548), w:fw, h:P(30), isTextBox:true, margin:0, fontFace:B, fontSize:7.5, color:TX3 });
+    { x:fx, y:P(590), w:fw, h:P(26), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
   shot(s, 'reels-idea',  P(470), P(168), P(300), '① 한 줄 아이디어 + 5단계');
   shot(s, 'reels-style', P(790), P(160), P(422), '② 표현 · 스타일 선택');
   shot(s, 'reels-video', P(530), P(384), P(520), '③ 배너 영상 · VEO 3.1 / Gemini Omni');
@@ -263,14 +313,16 @@ function chips(s, x, y, items){
   feature(s, fx, P(238), fw, '02', '판정 기준', '80점 이상 인용 가능 · 70점대 기본 충족 · 60점 이하 구조 개선 필요.');
   feature(s, fx, P(316), fw, '03', '진단 범위', 'ChatGPT · Gemini · Perplexity · 네이버 AI 브리핑(Yeti · 서치어드바이저).');
   feature(s, fx, P(394), fw, '04', '항목별 현재값 · 권장 기준', '인용 신뢰도(E-E-A-T 70점 이상) · 통계 포함 · 스키마 · 엔티티 연결성.');
-  const st = [['76% → 53%','생성형 AI 방문 점유율 중 ChatGPT 비중(Gemini 27% · Claude 9%)'],
-              ['85%','브랜드 언급 중 외부 콘텐츠 발생 비율']];
-  st.forEach(function(t, i){
-    const x = fx + i*P(196);
-    s.addShape(pres.ShapeType.rect, { x, y:P(486), w:P(3), h:P(56), fill:{ color:SKY } });
-    s.addText(t[0], { x:x+P(12), y:P(482), w:P(172), h:P(22), isTextBox:true, margin:0, fontFace:H, fontSize:12, color:NAVY });
-    s.addText(t[1], { x:x+P(12), y:P(506), w:P(172), h:P(46), isTextBox:true, margin:0,
-      fontFace:B, fontSize:7.5, color:TX, lineSpacingMultiple:1.25 });
+  quote(s, fx, P(478), fw, '고객은 AI에게 묻고 있는데, 우리 브랜드는 AI 답변에 등장하고 있나요?',
+    '엠플랜잇 AEO·GEO 개선 가이드(2026.09)');
+  const risks = [['제로클릭','오가닉 유입 20~30% 급감'],['추천 누락','AI 답변 후보군에서 제외'],['정보 왜곡','잘못된 정보로 신뢰 하락']];
+  risks.forEach(function(r, i){
+    const x = fx + i*P(128);
+    s.addShape(pres.ShapeType.roundRect, { x, y:P(534), w:P(120), h:P(48), rectRadius:0.06,
+      fill:{ color:'FFFFFF' }, line:{ color:LINE, width:0.75 } });
+    s.addText(r[0], { x:x+P(9), y:P(540), w:P(102), h:P(14), isTextBox:true, margin:0, fontFace:H, fontSize:8, color:'B42318' });
+    s.addText(r[1], { x:x+P(9), y:P(554), w:P(102), h:P(24), isTextBox:true, margin:0,
+      fontFace:B, fontSize:6.5, color:TX2, lineSpacingMultiple:1.2 });
   });
   shot(s, 'geo-landing', P(490), P(160), P(470), '① URL 입력 → 분석 시작');
   shot(s, 'geo-result',  P(600), P(350), P(560), '② 분석 결과 — 자사 진단(종합 84 / SEO 95 / GEO 72)');
@@ -285,20 +337,18 @@ function chips(s, x, y, items){
        '운영 중 · 카카오쇼핑 승인 대기');
 
   const panels = [
-    { y:P(158), t:'커머스허브', en:'COMMERCE HUB',
+    { y:P(150), h:P(172), t:'커머스허브', en:'COMMERCE HUB',
       mini:[['판매 채널','7개'],['주문 수집','매시'],['정산 수집','06:30']],
-      li:[['메뉴','정산 · 매출 · 재고 · 배송 · 광고비 · 설정'],
-          ['정산','채널별 금액 · 월별 추이 · 전월 동기간 비교'],
-          ['연동','오픈마켓 · 네이버 광고 API · 사업자/브랜드 권한']] },
-    { y:P(352), t:'애드리포트', en:'AD REPORT',
+      chips: MEDIA_CH,
+      li:[['메뉴','정산 · 매출 · 재고 · 배송 · 광고비 · 설정']] },
+    { y:P(340), h:P(216), t:'애드리포트', en:'AD REPORT',
       mini:[['광고 매체','14개'],['실적 수집','매시'],['리포트 유형','2가지']],
-      li:[['리포트','통합 대시보드 · 목표 현황 · 배분 현황 · 실시간 현황'],
-          ['분석','소재 · 키워드 · 광고주 코드 · UTM 생성/현황'],
-          ['알림','CPA 급등 · 전환 급감 메신저 통보 · 정시 실적 보고']] }];
+      chips: MEDIA_AD,
+      li:[['리포트','통합 대시보드 · 목표 현황 · 실시간 현황 · 소재/키워드 분석']] }];
 
   panels.forEach(function(p){
     const x = P(56), w = P(376);
-    s.addShape(pres.ShapeType.roundRect, { x, y:p.y, w, h:P(180), rectRadius:0.06,
+    s.addShape(pres.ShapeType.roundRect, { x, y:p.y, w, h:p.h, rectRadius:0.06,
       fill:{ color:'FBFDFF' }, line:{ color:LINE, width:0.75 } });
     s.addText([{ text:p.t+'  ', options:{ fontFace:H, fontSize:11, color:INK } },
                { text:p.en, options:{ fontFace:H, fontSize:7, color:SKY } }],
@@ -310,18 +360,19 @@ function chips(s, x, y, items){
       s.addText(m[0], { x:mx+P(10), y:p.y+P(44), w:P(90), h:P(12), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX2 });
       s.addText(m[1], { x:mx+P(10), y:p.y+P(56), w:P(90), h:P(18), isTextBox:true, margin:0, fontFace:H, fontSize:10.5, color:NAVY });
     });
+    const endY = medias(s, x+P(16), p.y+P(88), p.chips, w-P(32));
     p.li.forEach(function(l, i){
       s.addText([{ text:'· ', options:{ color:SKY, fontFace:H } },
                  { text:l[0]+' — ', options:{ color:NAVY, fontFace:H } },
                  { text:l[1], options:{ color:TX, fontFace:B } }],
-        { x:x+P(16), y:p.y+P(92)+i*P(28), w:w-P(32), h:P(24), isTextBox:true, margin:0, fontSize:8.5 });
+        { x:x+P(16), y:endY+P(8)+i*P(22), w:w-P(32), h:P(20), isTextBox:true, margin:0, fontSize:8 });
     });
   });
   s.addText('화면 — 운영 중 애드리포트 실제 캡처. 광고주명·금액·건수 마스킹 처리.',
-    { x:P(56), y:P(544), w:P(376), h:P(16), isTextBox:true, margin:0, fontFace:B, fontSize:7.5, color:TX3 });
+    { x:P(56), y:P(566), w:P(376), h:P(16), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
 
-  shot(s, 'adreport-dashboard', P(466), P(158), P(560), '① 통합 대시보드 — 매체군별 성과 · 목표 진척');
-  shot(s, 'adreport-goal',      P(748), P(380), P(460), '② 목표 현황 — 매체별 목표 대비 실적');
+  shot(s, 'adreport-dashboard', P(466), P(150), P(540), '① 통합 대시보드 — 매체군별 성과 · 목표 진척');
+  shot(s, 'adreport-goal',      P(766), P(362), P(442), '② 목표 현황 — 매체별 목표 대비 실적');
 
   s.addShape(pres.ShapeType.roundRect, { x:P(56), y:P(576), w:P(1168), h:P(62), rectRadius:0.05,
     fill:{ color:NAVY }, line:{ color:NAVY } });
