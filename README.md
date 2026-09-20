@@ -10,13 +10,15 @@
 
 ---
 
-## 엠플랜잇 AI 솔루션 소개서 (6장)
+## 엠플랜잇 AI 솔루션 소개서 (8장)
 
-광고주·클라이언트 제안용 AI 솔루션 소개 장표 — AI LAB 통합 / Banner Fit / Reels Studio / GEO Metric Care / 커머스허브 / 애드리포트
+광고주·클라이언트 제안용 AI 솔루션 소개 장표 — AI LAB 통합 · 솔루션 이미지맵 · Banner Fit · Reels Studio · GEO Metric Care · 커머스허브/애드리포트 · MI 솔루션
 
 - **웹(장표)**: `ai-solution/index.html` → https://raniara7-byte.github.io/mplanit/ai-solution/
   - 좌우 방향키·스크롤·하단 인디케이터로 이동, 브라우저 인쇄(Ctrl/Cmd+P)로 16:9 PDF 저장
-- **PDF**: `ai-solution/mplanit-ai-solution.pdf` (6페이지, 1280×720)
+- **단일 HTML(로컬 확인용)**: `ai-solution/mplanit-ai-solution.html` — 이미지·폰트 내장, 파일 하나만 열면 됨
+  (생성: `python3 ai-solution/tools/build-standalone.py`)
+- **PDF**: `ai-solution/mplanit-ai-solution.pdf` (8페이지, 1280×720)
 - **PPT**: `ai-solution/mplanit-ai-solution.pptx` (16:9, 텍스트 편집 가능 · 생성 스크립트 `ai-solution/tools/build-pptx.js`)
 - **서체**: `ai-solution/fonts/` — 페이퍼로지 4/7/8 (사내 PPT 테마와 동일)
 - **이미지**: `ai-solution/assets/` — 사내 PPT(2026.09)에서 추출한 실제 제품 화면과 정식 로고

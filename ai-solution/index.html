@@ -51,6 +51,26 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 .m svg{display:block}
 .m.txt::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c);flex:none}
 .mlabel{font-size:11px;font-weight:800;color:var(--tx3);letter-spacing:.02em;margin-right:2px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.tile{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;
+  box-shadow:0 8px 20px rgba(15,27,46,.07);display:flex;flex-direction:column}
+.tile .thumb{height:148px;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg2)}
+.tile .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.tile .thumb.ph{display:grid;place-items:center;color:var(--tx3);font-size:12px;font-weight:700;
+  background:repeating-linear-gradient(45deg,#F7FAFE,#F7FAFE 10px,#EFF4FA 10px,#EFF4FA 20px)}
+.tile .tb{padding:12px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
+.tile .tt{display:flex;align-items:center;gap:7px}
+.tile h4{font-size:15px;font-weight:800;letter-spacing:-.035em}
+.tile .stg2{font-size:9.5px;font-weight:800;color:#fff;background:var(--sky);border-radius:5px;padding:2px 6px}
+.tile p{font-size:11.5px;line-height:1.45;color:var(--tx);flex:1}
+.tile .u{font-size:10px;font-weight:700;color:var(--tx3)}
+.mi{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.mibox{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#FBFDFF,#F6F9FD);padding:14px 16px}
+.mibox h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.mistep{display:flex;align-items:center;gap:8px}
+.mistep .b{flex:1;background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 11px;text-align:center}
+.mistep .b b{display:block;font-size:12px;font-weight:800;color:var(--ink)}
+.mistep .b span{font-size:10px;color:var(--tx2)}
 .quote{border-left:3px solid var(--navy);background:var(--bg2);border-radius:0 8px 8px 0;
   padding:10px 14px;font-size:13px;font-weight:800;color:var(--navy);line-height:1.45}
 .quote small{display:block;font-size:10.5px;font-weight:700;color:var(--tx2);margin-top:4px}
@@ -77,30 +97,30 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 .fl{font-size:12.5px;font-weight:700;color:var(--navy);background:var(--chip);border-radius:7px;padding:8px 14px}
 .fl small{color:var(--tx2);font-weight:600;margin-left:6px}
 .arw{color:var(--line2);font-weight:800}
-.solgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
-.sol{border:1px solid var(--line);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;min-height:180px;
+.solgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:20px}
+.sol{border:1px solid var(--line);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;min-height:174px;
   background:linear-gradient(180deg,#FBFDFF,#F5F8FC)}
 .sol .tp{display:flex;align-items:center;gap:8px}
 .sol .ic{width:26px;height:26px;border-radius:7px;background:var(--navy);display:grid;place-items:center;flex:none}
-.sol h3{font-size:16px;font-weight:800;letter-spacing:-.03em}
+.sol h3{font-size:14.5px;font-weight:800;letter-spacing:-.04em}
 .sol .en{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--sky);text-transform:uppercase;margin-top:4px}
-.sol p{font-size:12.5px;line-height:1.5;color:var(--tx);margin-top:10px;flex:1}
-.sol .kv{font-size:11.5px;font-weight:800;color:var(--navy);border-top:1px dashed var(--line2);padding-top:8px}
+.sol p{font-size:11.5px;line-height:1.5;color:var(--tx);margin-top:9px;flex:1}
+.sol .kv{font-size:10.5px;font-weight:800;color:var(--navy);border-top:1px dashed var(--line2);padding-top:7px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
 .st{border-left:3px solid var(--sky);padding:2px 0 2px 12px}
 .st b{font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--navy);display:block}
 .st span{font-size:11.5px;color:var(--tx);line-height:1.4;display:block;margin-top:3px}
 .src{font-size:10px;color:var(--tx3);margin-top:12px}
 /* AI LAB map */
-.map{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:20px}
+.map{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:20px}
 .mapc{border:1px solid var(--line2);border-radius:10px;overflow:hidden;background:#fff}
-.mapc .hd{background:var(--navy);color:#fff;padding:9px 12px;font-size:13.5px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.mapc .hd{background:var(--navy);color:#fff;padding:8px 10px;font-size:12.5px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
 .mapc .hd i{font-style:normal;font-size:9.5px;font-weight:700;background:rgba(255,255,255,.22);border-radius:4px;padding:2px 6px}
-.mapc .bd{padding:11px 12px}
-.mapc .bd div{font-size:11.8px;color:var(--tx);line-height:1.45;padding:4px 0;border-bottom:1px dashed var(--line)}
+.mapc .bd{padding:10px 10px}
+.mapc .bd div{font-size:11px;color:var(--tx);line-height:1.45;padding:4px 0;border-bottom:1px dashed var(--line)}
 .mapc .bd div:last-child{border:0}
 .mapc .bd b{color:var(--navy);font-weight:700}
-.stage-row{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:12px}
+.stage-row{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:12px}
 .stg{font-size:11.5px;font-weight:800;color:var(--sky);text-align:center;letter-spacing:.06em}
 .dataflow{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:13px 16px;
   display:flex;align-items:center;gap:9px}
@@ -160,13 +180,14 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
   </div>
 
   <h1>제작 · 노출 · 판매 · 성과<br/><span>광고 실무 전 과정의 AI 전환</span></h1>
-  <p class="lead">엠플랜잇 AI LAB 운영 솔루션 5종 — 대행사 실무 기준 설계, 1인 기업까지 사용</p>
+  <p class="lead">엠플랜잇 AI LAB 솔루션 6종 — 대행사 실무 기준 설계, 1인 기업까지 사용</p>
 
   <div class="flow">
     <span class="fl">제작<small>Banner Fit · Reels Studio</small></span><span class="arw">›</span>
     <span class="fl">노출<small>GEO Metric Care</small></span><span class="arw">›</span>
     <span class="fl">판매<small>커머스허브</small></span><span class="arw">›</span>
-    <span class="fl">성과<small>애드리포트</small></span>
+    <span class="fl">성과<small>애드리포트</small></span><span class="arw">›</span>
+    <span class="fl">운영<small>MI 솔루션</small></span>
   </div>
 
   <div class="solgrid">
@@ -200,6 +221,12 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
       <p>14개 매체 집행 현황 · 전환 · ROAS · 알림 · 리포트</p>
       <span class="kv">성과 이상 즉시 알림</span>
     </div>
+    <div class="sol">
+      <div class="tp"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><path d="M5 16l7 5 7-5"/></svg></span><h3>MI 솔루션</h3></div>
+      <span class="en">Marketing Intelligence</span>
+      <p>네이버 검색광고 자동입찰 · 다계정 대량 통합 리포트</p>
+      <span class="kv">운영 자동화 · 공수 대체</span>
+    </div>
   </div>
 
   <div class="stats">
@@ -207,9 +234,9 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
     <div class="st"><b>약 40%</b><span>2026년 AI 제작 디지털 광고 비중 전망</span></div>
     <div class="st"><b>0.8~1.3%</b><span>AI 검색 클릭률(구글 29%) — 인용 없으면 유입 없음</span></div>
   </div>
-<div class="medias" style="margin-top:12px"><span class="mlabel">연동 광고 매체 14</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#FFCD00">카카오</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="m txt" style="--c:#6B7A90">모비온</span><span class="mlabel" style="margin-left:10px">판매 채널 7</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
+<div class="medias" style="margin-top:10px"><span class="mlabel">연동 광고 매체 14</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버 검색</span><span class="m txt" style="--c:#03C75A">GFA</span><span class="m txt" style="--c:#03C75A">NOSP</span><span class="m txt" style="--c:#FFCD00">카카오모먼트</span><span class="m txt" style="--c:#FFCD00">카카오페이</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#6B7A90">모비온</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="mlabel" style="margin-left:8px">판매 채널 7</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
   <p class="src">출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용</p>
-  <div class="foot"><span><b>엠플랜잇 AIU본부 · AI LAB</b> · mplanit.co.kr</span><span>01 / 06</span></div>
+  <div class="foot"><span><b>엠플랜잇 AIU본부 · AI LAB</b> · mplanit.co.kr</span><span>01 / 08</span></div>
 </section>
 
 <!-- ===== 02 AI LAB 통합 ===== -->
@@ -219,12 +246,12 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
     <div>
       <span class="kicker">AI LAB Integration</span>
       <h2>AI LAB 통합 구조 — <em>소재에서 매출까지 한 줄로</em></h2>
-      <p class="sub">솔루션 5종 · 단계별 역할 · 데이터 연결 · 적용 대상 요약</p>
+      <p class="sub">솔루션 6종 · 단계별 역할 · 데이터 연결 · 적용 대상 요약</p>
     </div>
     <span class="urlchip">통합 요약 1장</span>
   </div>
 
-  <div class="stage-row"><span class="stg">01 제작</span><span class="stg">02 제작</span><span class="stg">03 노출</span><span class="stg">04 판매</span><span class="stg">05 성과</span></div>
+  <div class="stage-row"><span class="stg">01 제작</span><span class="stg">02 제작</span><span class="stg">03 노출</span><span class="stg">04 판매</span><span class="stg">05 성과</span><span class="stg">06 운영</span></div>
   <div class="map" style="margin-top:6px">
     <div class="mapc">
       <div class="hd">배너핏 <i>운영</i></div>
@@ -271,6 +298,15 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
         <div>알림 · 정기 리포트</div>
       </div>
     </div>
+    <div class="mapc">
+      <div class="hd">MI 솔루션 <i>준비</i></div>
+      <div class="bd">
+        <div>네이버 <b>자동입찰</b></div>
+        <div>순위 목표 · 시간대 규칙</div>
+        <div><b>다계정</b> 통합 리포트</div>
+        <div>정기 자동 발송</div>
+      </div>
+    </div>
   </div>
 
   <div class="dataflow">
@@ -289,7 +325,73 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 
   <div class="quote" style="margin-top:14px">판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인
     <small>채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다 · 카카오쇼핑 API 연동 신청 자료(2026.09)</small></div>
-  <div class="foot"><span><b>AI LAB</b> · 통합 구조 요약</span><span>02 / 06</span></div>
+  <div class="foot"><span><b>AI LAB</b> · 통합 구조 요약</span><span>02 / 08</span></div>
+</section>
+
+<!-- ===== 03 솔루션 이미지맵 ===== -->
+<section class="slide">
+  <div class="rule"></div>
+  <div class="shead">
+    <div>
+      <span class="kicker">SOLUTION MAP</span>
+      <h2>솔루션 이미지맵 — <em>화면으로 보는 6종</em></h2>
+      <p class="sub">제작 → 노출 → 판매 → 성과 → 운영, 실제 운영 화면 기준</p>
+    </div>
+    <span class="urlchip">한 장 요약 · 배포용</span>
+  </div>
+
+  <div class="tiles">
+    <div class="tile">
+      <div class="thumb"><img src="assets/bannerfit-editor.webp" alt="배너핏 편집 화면" /></div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">제작</span><h4>배너핏</h4></div>
+        <p>시안 생성 · 매체 규격 변형 · 레이어 편집 · 영상 전환</p>
+        <span class="u">banner-fit.mplanit.co.kr</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="thumb"><img src="assets/reels-idea.webp" alt="릴스 스튜디오 화면" /></div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">제작</span><h4>릴스 스튜디오</h4></div>
+        <p>한 줄 아이디어 · 기획 5단계 · 컷 승인형 렌더</p>
+        <span class="u">reel-studio.mplanit.co.kr</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="thumb"><img src="assets/geo-result.webp" alt="지오 메트릭 케어 분석 결과" /></div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">노출</span><h4>지오 메트릭 케어</h4></div>
+        <p>종합 · SEO · GEO 점수 진단 · 개선 가이드 · 정기 재측정</p>
+        <span class="u">geo.mplanit.co.kr</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="thumb ph">커머스허브 화면 — 사내 공유 예정</div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">판매</span><h4>커머스허브</h4></div>
+        <p>7개 마켓 주문 · 배송 · 정산 · 재고 · 광고비 통합</p>
+        <span class="u">정산 · 매출 · 재고 · 배송 · 광고비 · 설정</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="thumb"><img src="assets/adreport-dashboard.webp" alt="애드리포트 통합 대시보드" /></div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">성과</span><h4>애드리포트</h4></div>
+        <p>14개 매체 집행 · 목표 진척 · ROAS · 이상 알림</p>
+        <span class="u">통합 대시보드 · 목표/실시간 현황</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="thumb ph">MI 솔루션 화면 — 준비 중</div>
+      <div class="tb">
+        <div class="tt"><span class="stg2">운영</span><h4>MI 솔루션</h4></div>
+        <p>네이버 검색광고 자동입찰 · 다계정 대량 통합 리포트</p>
+        <span class="u">운영 자동화 · 공수 대체</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span><b>Solution Map</b> · 화면 기준 요약</span><span>03 / 08</span></div>
 </section>
 
 <!-- ===== 03 Banner Fit ===== -->
@@ -322,7 +424,7 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
       <div class="shot" style="left:70px;top:196px;width:600px;z-index:3"><img src="assets/bannerfit-editor.webp" alt="Banner Fit 레이어 편집" /><span class="cap">③ 레이어 편집 · 사이즈 변형 · 다운로드</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>Banner Fit</b> · 배너핏</span><span>03 / 06</span></div>
+  <div class="foot"><span><b>Banner Fit</b> · 배너핏</span><span>04 / 08</span></div>
 </section>
 
 <!-- ===== 04 Reels Studio ===== -->
@@ -355,7 +457,7 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
       <div class="shot" style="left:60px;top:234px;width:520px;z-index:3"><img src="assets/reels-video.webp" alt="Reels Studio 영상 엔진" /><span class="cap">③ 배너 영상 · VEO 3.1 / Gemini Omni</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>Reels Studio</b> · 릴스 스튜디오</span><span>04 / 06</span></div>
+  <div class="foot"><span><b>Reels Studio</b> · 릴스 스튜디오</span><span>05 / 08</span></div>
 </section>
 
 <!-- ===== 05 GEO ===== -->
@@ -390,7 +492,7 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
       <div class="shot" style="left:130px;top:186px;width:560px;z-index:2"><img src="assets/geo-result.webp" alt="GEO Metric Care 분석 결과" /><span class="cap">② 분석 결과 — 자사 진단(종합 84 / SEO 95 / GEO 72)</span></div>
     </div>
   </div>
-  <div class="foot"><span><b>GEO Metric Care</b> · 지오 메트릭 케어</span><span>05 / 06</span></div>
+  <div class="foot"><span><b>GEO Metric Care</b> · 지오 메트릭 케어</span><span>06 / 08</span></div>
 </section>
 
 <!-- ===== 06 커머스허브 + 애드리포트 ===== -->
@@ -427,7 +529,7 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
           <div><small>실적 수집</small><b>매시</b></div>
           <div><small>리포트 유형</small><b>2가지</b></div>
         </div>
-        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#FFCD00">카카오</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="m txt" style="--c:#6B7A90">모비온</span></div>
+        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버 검색</span><span class="m txt" style="--c:#03C75A">GFA</span><span class="m txt" style="--c:#03C75A">NOSP</span><span class="m txt" style="--c:#FFCD00">카카오모먼트</span><span class="m txt" style="--c:#FFCD00">카카오페이</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#6B7A90">모비온</span><span class="m txt" style="--c:#0064FF">토스애즈</span></div>
         <div class="list" style="margin-top:8px">
           <div class="li"><i>·</i><span><b>리포트</b> — 통합 대시보드 · 목표 현황 · 실시간 현황 · 소재/키워드 분석</span></div>
         </div>
@@ -448,15 +550,76 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 
   <div class="foot">
     <span>출처 · Similarweb AI Search Stats 2026 · OpenAI(2026.07) · 크몽 숏폼 단가 가이드 · 엠플랜잇 운영 자료(2026.09)</span>
-    <span>06 / 06</span>
+    <span>07 / 08</span>
   </div>
+</section>
+
+<!-- ===== 08 MI 솔루션 ===== -->
+<section class="slide">
+  <div class="rule"></div>
+  <div class="shead">
+    <div>
+      <span class="kicker">06 Operation</span>
+      <h2>MI 솔루션 — <em>네이버 자동입찰 · 대량 통합 리포트</em></h2>
+      <p class="sub">외부 입찰관리 툴(애드몬스터 유형) 기능의 사내 내재화 · 애드리포트 데이터와 동일 기준</p>
+    </div>
+    <span class="urlchip">Marketing Intelligence</span>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="pts">
+        <div class="pt"><span class="n">01</span><div><h4>네이버 검색광고 자동입찰</h4><p>키워드 <b>순위 목표</b> 기반 입찰 조정 · 시간대/요일 규칙 · 예산 소진 제어.</p></div></div>
+        <div class="pt"><span class="n">02</span><div><h4>대량 통합 리포트</h4><p><b>다계정 · 다광고주</b> 실적 일괄 수집 · 키워드 단위 대량 추출 · 정기 자동 발송.</p></div></div>
+        <div class="pt"><span class="n">03</span><div><h4>운영 공수 대체</h4><p>수기 입찰 조정 · 리포트 취합 제거. 외부 입찰관리 툴 구독 대체.</p></div></div>
+        <div class="pt"><span class="n">04</span><div><h4>사내 데이터 연동</h4><p>애드리포트 성과 · 커머스허브 매출과 <b>같은 기준</b>으로 결합.</p></div></div>
+      </div>
+      <div class="quote" style="margin-top:16px">입찰은 자동으로, 리포트는 일괄로<small>운영자는 전략 판단에만 개입</small></div>
+      <p class="note" style="margin-top:10px">기능 범위·오픈 일정은 내부 확정 후 갱신 — 현재 장표는 개발 방향 기준.</p>
+    </div>
+
+    <div class="mi">
+      <div class="mibox">
+        <h4>자동입찰 — 목표 기반 반복 조정</h4>
+        <div class="mistep">
+          <div class="b"><b>목표 설정</b><span>키워드 순위 · 예산</span></div><span class="arw">›</span>
+          <div class="b"><b>현황 수집</b><span>순위 · 노출 · 비용</span></div><span class="arw">›</span>
+          <div class="b"><b>입찰 조정</b><span>규칙 기반 자동</span></div><span class="arw">›</span>
+          <div class="b"><b>결과 확인</b><span>변경 이력 · 성과</span></div>
+        </div>
+      </div>
+      <div class="mibox">
+        <h4>대량 통합 리포트 — 계정 수와 무관한 산출</h4>
+        <div class="mistep">
+          <div class="b"><b>다계정 수집</b><span>광고주 N · 매체별</span></div><span class="arw">›</span>
+          <div class="b"><b>통합 집계</b><span>키워드 · 캠페인 단위</span></div><span class="arw">›</span>
+          <div class="b"><b>자동 발송</b><span>정기 리포트 · 파일</span></div>
+        </div>
+      </div>
+      <div class="mibox" style="background:linear-gradient(180deg,#F8FBFF,#EEF4FC)">
+        <h4>연결 구조</h4>
+        <div class="mistep">
+          <div class="b"><b>MI</b><span>입찰 · 대량 리포트</span></div><span class="arw">›</span>
+          <div class="b"><b>애드리포트</b><span>매체 성과 · ROAS</span></div><span class="arw">›</span>
+          <div class="b"><b>커머스허브</b><span>채널 매출</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="target" style="margin-top:14px">
+    <div class="tg"><b>구독 비용 대체</b><span>외부 입찰관리 툴 이용료 없이 사내 계정으로 운영</span></div>
+    <div class="tg"><b>데이터 단절 없음</b><span>입찰·리포트·매출이 애드리포트/커머스허브와 같은 기준</span></div>
+    <div class="tg"><b>광고주 단위 권한</b><span>사업자·브랜드·담당자 권한 체계 그대로 적용</span></div>
+  </div>
+  <div class="foot"><span><b>MI 솔루션</b> · Marketing Intelligence</span><span>08 / 08</span></div>
 </section>
 
 </div></div>
 
 <div id="nav">
   <button id="prev" aria-label="이전">‹</button><div class="dots" id="dots"></div>
-  <span id="count">01 / 06</span><button id="next" aria-label="다음">›</button>
+  <span id="count">01 / 08</span><button id="next" aria-label="다음">›</button>
 </div>
 
 <script>
