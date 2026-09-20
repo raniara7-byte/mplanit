@@ -45,6 +45,19 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 .pt p b{color:var(--navy);font-weight:700}
 .note{margin-top:18px;font-size:11px;line-height:1.5;color:var(--tx3)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}
+.medias{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.m{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--tx);
+  background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 9px;line-height:1}
+.m svg{display:block}
+.m.txt::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c);flex:none}
+.mlabel{font-size:11px;font-weight:800;color:var(--tx3);letter-spacing:.02em;margin-right:2px}
+.quote{border-left:3px solid var(--navy);background:var(--bg2);border-radius:0 8px 8px 0;
+  padding:10px 14px;font-size:13px;font-weight:800;color:var(--navy);line-height:1.45}
+.quote small{display:block;font-size:10.5px;font-weight:700;color:var(--tx2);margin-top:4px}
+.risks{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}
+.rk{border:1px solid var(--line);border-radius:8px;padding:8px 9px;background:#fff}
+.rk b{display:block;font-size:11.5px;font-weight:800;color:#B42318}
+.rk span{font-size:10px;color:var(--tx2);line-height:1.35;display:block;margin-top:2px}
 .ch{font-size:11.5px;font-weight:700;color:var(--navy);background:var(--chip);border-radius:6px;padding:6px 10px}
 .ch.gray{color:var(--tx2);background:var(--bg2)}
 .shots{position:relative;height:470px;isolation:isolate}
@@ -194,7 +207,8 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
     <div class="st"><b>약 40%</b><span>2026년 AI 제작 디지털 광고 비중 전망</span></div>
     <div class="st"><b>0.8~1.3%</b><span>AI 검색 클릭률(구글 29%) — 인용 없으면 유입 없음</span></div>
   </div>
-  <p class="src">출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10)</p>
+<div class="medias" style="margin-top:12px"><span class="mlabel">연동 광고 매체 14</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#FFCD00">카카오</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="m txt" style="--c:#6B7A90">모비온</span><span class="mlabel" style="margin-left:10px">판매 채널 7</span><span class="m"><svg viewBox="0 0 24 24" width="15" height="15" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
+  <p class="src">출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용</p>
   <div class="foot"><span><b>엠플랜잇 AIU본부 · AI LAB</b> · mplanit.co.kr</span><span>01 / 06</span></div>
 </section>
 
@@ -273,6 +287,8 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
     <div class="tg"><b>소상공인 · 1인 기업</b><span>디자이너 없이 배너·영상 자체 제작 · 마켓 주문/정산 단일 화면 관리</span></div>
   </div>
 
+  <div class="quote" style="margin-top:14px">판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인
+    <small>채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다 · 카카오쇼핑 API 연동 신청 자료(2026.09)</small></div>
   <div class="foot"><span><b>AI LAB</b> · 통합 구조 요약</span><span>02 / 06</span></div>
 </section>
 
@@ -297,7 +313,8 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
         <div class="pt"><span class="n">04</span><div><h4>생성 모델 선택</h4><p>이미지 <b>Gemini(나노 바나나) · ChatGPT 2.0</b>. 완성 시안은 영상 생성 탭으로 연결.</p></div></div>
       </div>
       <div class="chips"><span class="ch">크리에이티브 생성</span><span class="ch">소재 사이즈 변형</span><span class="ch">영상 생성</span><span class="ch gray">편집하기 · 프로젝트</span></div>
-      <p class="note">화면 — 운영 중인 Banner Fit 실제 캡처. 편집 화면 시안은 당사 집행 소재.</p>
+      <div class="quote" style="margin-top:16px">한 번 입력으로 즉시 생성<small>이미지 업로드와 요청 한 줄 → 배경 · 카피 · 레이아웃 시안 동시 산출</small></div>
+      <p class="note" style="margin-top:10px">화면 — 운영 중 Banner Fit 실제 캡처. 편집 화면 시안은 당사 집행 소재.</p>
     </div>
     <div class="shots">
       <div class="shot" style="left:0;top:6px;width:276px;z-index:1"><img src="assets/bannerfit-form.webp" alt="Banner Fit 라이트 모드" /><span class="cap">① 라이트 모드 · 6단계 입력</span></div>
@@ -329,7 +346,8 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
         <div class="pt"><span class="n">04</span><div><h4>컷 승인형 렌더</h4><p>컷별 승인 · 재생성 후 <b>VEO 3.1(1080p)</b> 또는 <b>Gemini Omni(720p)</b>로 출력.</p></div></div>
       </div>
       <div class="chips"><span class="ch">쇼츠 9:16</span><span class="ch">유튜브 16:9</span><span class="ch">인스타 1:1</span><span class="ch gray">배너 영상 · 시작/엔드 프레임</span></div>
-      <p class="note">참고 — 국내 숏폼 외주 단가 15만~200만원, 기간 2~3주(크몽 단가 가이드 기준).</p>
+      <div class="quote" style="margin-top:16px">'만들기'가 아니라 '다듬기'부터<small>AI가 대본·키프레임 포함 콘티 전체를 먼저 제안 · 승인한 컷만 과금</small></div>
+      <p class="note" style="margin-top:10px">참고 — 국내 숏폼 외주 단가 15만~200만원, 기간 2~3주(크몽 단가 가이드 기준).</p>
     </div>
     <div class="shots">
       <div class="shot" style="left:0;top:8px;width:300px;z-index:1"><img src="assets/reels-idea.webp" alt="Reels Studio 아이디어 입력" /><span class="cap">① 한 줄 아이디어 + 5단계</span></div>
@@ -360,9 +378,11 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
         <div class="pt"><span class="n">03</span><div><h4>진단 범위</h4><p>ChatGPT · Gemini · Perplexity · <b>네이버 AI 브리핑</b>(Yeti 접근 · 서치어드바이저).</p></div></div>
         <div class="pt"><span class="n">04</span><div><h4>항목별 현재값 · 권장 기준</h4><p>인용 신뢰도(E-E-A-T 70점 이상) · 통계 포함 · 스키마 · 엔티티 연결성.</p></div></div>
       </div>
-      <div class="stats" style="grid-template-columns:1fr 1fr;margin-top:18px">
-        <div class="st"><b>76% → 53%</b><span>생성형 AI 방문 점유율 중 ChatGPT 비중(Gemini 27% · Claude 9%)</span></div>
-        <div class="st"><b>85%</b><span>브랜드 언급 중 외부 콘텐츠 발생 비율</span></div>
+      <div class="quote" style="margin-top:16px">고객은 AI에게 묻고 있는데,<br/>우리 브랜드는 AI 답변에 등장하고 있나요?</div>
+      <div class="risks">
+        <div class="rk"><b>제로클릭</b><span>오가닉 유입 20~30% 급감</span></div>
+        <div class="rk"><b>추천 누락</b><span>AI 답변 후보군에서 제외</span></div>
+        <div class="rk"><b>정보 왜곡</b><span>잘못된 정보로 신뢰 하락</span></div>
       </div>
     </div>
     <div class="shots">
@@ -387,43 +407,41 @@ body{background:#E9EDF3;color:var(--ink);overflow:hidden;
 
   <div class="cols">
     <div>
-      <div class="panel" style="padding:14px 16px">
+      <div class="panel" style="padding:12px 14px">
         <h3 style="font-size:15px">커머스허브 <span style="font-size:10px;color:var(--sky);font-weight:700">COMMERCE HUB</span></h3>
         <div class="mini" style="margin-top:10px">
           <div><small>판매 채널</small><b>7개</b></div>
           <div><small>주문 수집</small><b>매시</b></div>
           <div><small>정산 수집</small><b>06:30</b></div>
         </div>
-        <div class="list" style="margin-top:10px">
+        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>스마트스토어</span><span class="m txt" style="--c:#C4161C">쿠팡</span><span class="m txt" style="--c:#1B5FAA">카페24</span><span class="m txt" style="--c:#FF0038">11번가</span><span class="m txt" style="--c:#0064FF">토스쇼핑</span><span class="m txt" style="--c:#00A650">G마켓·옥션</span><span class="m txt" style="--c:#FFCD00">톡스토어</span></div>
+        <div class="list" style="margin-top:8px">
           <div class="li"><i>·</i><span><b>메뉴</b> — 정산 · 매출 · 재고 · 배송 · 광고비 · 설정</span></div>
-          <div class="li"><i>·</i><span><b>정산</b> — 채널별 금액 · 월별 추이 · 전월 동기간 비교</span></div>
-          <div class="li"><i>·</i><span><b>연동</b> — 오픈마켓 · 네이버 광고 API · 사업자/브랜드 권한</span></div>
         </div>
       </div>
 
-      <div class="panel" style="padding:14px 16px;margin-top:12px">
+      <div class="panel" style="padding:12px 14px;margin-top:10px">
         <h3 style="font-size:15px">애드리포트 <span style="font-size:10px;color:var(--sky);font-weight:700">AD REPORT</span></h3>
         <div class="mini" style="margin-top:10px">
           <div><small>광고 매체</small><b>14개</b></div>
           <div><small>실적 수집</small><b>매시</b></div>
           <div><small>리포트 유형</small><b>2가지</b></div>
         </div>
-        <div class="list" style="margin-top:10px">
-          <div class="li"><i>·</i><span><b>리포트</b> — 통합 대시보드 · 목표 현황 · 배분 현황 · 실시간 현황</span></div>
-          <div class="li"><i>·</i><span><b>분석</b> — 소재 · 키워드 · 광고주 코드 · UTM 생성/현황</span></div>
-          <div class="li"><i>·</i><span><b>알림</b> — CPA 급등 · 전환 급감 메신저 통보 · 정시 실적 보고</span></div>
+        <div class="medias" style="margin-top:10px"><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#03C75A" aria-hidden="true"><path d="M16.273 12.845 7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845Z"/></svg>네이버</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#0467DF" aria-hidden="true"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg>메타</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#4285F4" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>틱톡</span><span class="m txt" style="--c:#FFCD00">카카오</span><span class="m txt" style="--c:#FF6F0F">당근</span><span class="m txt" style="--c:#F76B15">크리테오</span><span class="m txt" style="--c:#0B4F8A">타불라</span><span class="m"><svg viewBox="0 0 24 24" width="13" height="13" fill="#000000" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Apple Ads</span><span class="m txt" style="--c:#0064FF">토스애즈</span><span class="m txt" style="--c:#6B7A90">모비온</span></div>
+        <div class="list" style="margin-top:8px">
+          <div class="li"><i>·</i><span><b>리포트</b> — 통합 대시보드 · 목표 현황 · 실시간 현황 · 소재/키워드 분석</span></div>
         </div>
       </div>
-      <p class="note" style="margin-top:12px">화면 — 운영 중 애드리포트 실제 캡처. 광고주명·금액·건수 마스킹 처리.</p>
+      <p class="note" style="margin-top:9px">화면 — 운영 중 애드리포트 실제 캡처. 광고주명·금액·건수 마스킹 처리.</p>
     </div>
 
-    <div class="shots" style="height:430px">
-      <div class="shot" style="left:0;top:0;width:560px;z-index:1"><img src="assets/adreport-dashboard.webp" alt="애드리포트 통합 대시보드" /><span class="cap">① 통합 대시보드 — 매체군별 성과 · 목표 진척</span></div>
-      <div class="shot" style="left:282px;top:222px;width:460px;z-index:2"><img src="assets/adreport-goal.webp" alt="애드리포트 목표 현황" /><span class="cap">② 목표 현황 — 매체별 목표 대비 실적</span></div>
+    <div class="shots" style="height:410px">
+      <div class="shot" style="left:0;top:0;width:540px;z-index:1"><img src="assets/adreport-dashboard.webp" alt="애드리포트 통합 대시보드" /><span class="cap">① 통합 대시보드 — 매체군별 성과 · 목표 진척</span></div>
+      <div class="shot" style="left:300px;top:212px;width:442px;z-index:2"><img src="assets/adreport-goal.webp" alt="애드리포트 목표 현황" /><span class="cap">② 목표 현황 — 매체별 목표 대비 실적</span></div>
     </div>
   </div>
 
-  <div class="closing" style="margin-top:6px">
+  <div class="closing" style="margin-top:0;padding:12px 20px">
     <div><b>도입 3단계 — 진단 → 연동 세팅 → 운영</b><br/><span>광고주 성과 · 대행사 공수 · 1인 기업 인력 대체</span></div>
     <span class="cta">엠플랜잇 AIU본부 · mplanit.co.kr</span>
   </div>
