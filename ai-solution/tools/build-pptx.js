@@ -196,7 +196,7 @@ function chips(s, x, y, items){
              { text:'공식 파트너 ', options:{ fontFace:H, color:TX2 } },
              { text:'네이버 · 카카오 · 크리테오 — 공식 홈페이지 공개 기준', options:{ fontFace:B, color:TX3 } }],
     { x:P(56), y:P(606), w:P(1168), h:P(16), isTextBox:true, margin:0, fontSize:7.5 });
-  foot(s, '엠플랜잇 AIU본부 · M Ai Platform · AI LAB · mplanit.co.kr', '01 / 09');
+  foot(s, '엠플랜잇 AIU본부 · M Ai Platform · AI LAB · mplanit.co.kr', '01 / 08');
   s.addNotes('표지 — 솔루션 5종과 시장 근거 3가지. 제작·노출·판매·성과 흐름으로 설명.');
 })();
 
@@ -268,9 +268,9 @@ function chips(s, x, y, items){
     s.addText(t[1], { x:x+P(16), y:P(480), w:P(350), h:P(36), isTextBox:true, margin:0,
       fontFace:B, fontSize:8.5, color:TX, lineSpacingMultiple:1.3 });
   });
-  quote(s, P(56), P(540), P(1168), '판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인',
-    '채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다 · 카카오쇼핑 API 연동 신청 자료(2026.09)');
-  foot(s, 'Solution Architecture · 통합 구조 요약', '02 / 09');
+  quote(s, P(56), P(536), P(1168), '판매와 광고를 한곳에서 — 광고비가 실제로 얼마를 팔았는지 확인',
+    '채널마다 접속·다운로드·옮겨적기 없이, 주문과 광고비가 같은 기준으로 합쳐집니다\n※ 서비스 포트폴리오 구성도이며 솔루션 간 자동 통합 아키텍처를 뜻하지 않습니다');
+  foot(s, 'Solution Architecture · 통합 구조 요약', '02 / 08');
   s.addNotes('AI LAB 통합 요약 — 단독 1장으로도 사용 가능. 5개 솔루션의 역할, 데이터 연결, 대상별 활용.');
 })();
 
@@ -312,7 +312,7 @@ function chips(s, x, y, items){
     s.addText(t[3], { x:x+P(14), y:y+P(220), w:tw-P(28), h:P(16), isTextBox:true, margin:0,
       fontFace:H, fontSize:7, color:TX3 });
   });
-  foot(s, 'Solution Map · 화면 기준 요약', '03 / 09');
+  foot(s, 'Solution Map · 화면 기준 요약', '03 / 08');
   s.addNotes('솔루션 이미지맵 — 단독 1장 배포용. 커머스허브/MI 화면은 확보 후 교체.');
 })();
 
@@ -322,19 +322,18 @@ function chips(s, x, y, items){
   head(s, '01 CREATIVE · M AI PLATFORM', 'Banner Fit — ', '배너 1장이 아닌 캠페인 한 세트',
        '시안 생성 · 규격 변형 · 레이어 편집 · 영상 전환, 한 도구 안에서', 'banner-fit.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '입력 6단계', '기본정보 · 이미지 · 스타일 · 텍스트 · 출력 · 모델');
-  feature(s, fx, P(238), fw, '02', '2가지 작업 모드', '라이트 양식 입력 / 에디터 대화 지시');
-  feature(s, fx, P(316), fw, '03', '규격 변형 · 레이어 편집', '기본 4비율 + 매체 규격 23종 · 레이어 분리 수정');
-  feature(s, fx, P(394), fw, '04', '생성 모델 선택', 'Gemini(나노 바나나) · ChatGPT 2.0 → 영상 생성 연결');
-  chips(s, fx, P(474), [{t:'크리에이티브 생성'},{t:'소재 사이즈 변형'},{t:'영상 생성'}]);
-  chips(s, fx, P(504), [{t:'편집하기 · 프로젝트', gray:true}]);
-  quote(s, fx, P(536), fw, '한 번 입력으로 즉시 생성', '이미지 업로드와 요청 한 줄 → 배경 · 카피 · 레이아웃 시안 동시 산출');
+  feature(s, fx, P(160), fw, '01', '한 번 입력으로 즉시 생성', '이미지 + 요청 한 줄 → 배경 · 카피 · 레이아웃 동시 산출');
+  feature(s, fx, P(238), fw, '02', '매체 규격 자동 대응', '23개 이상 매체 규격 · 안전 영역 · 텍스트 비율 내장');
+  feature(s, fx, P(316), fw, '03', '디자이너 워크플로 연결', '텍스트 · 로고 · 배경 분리 PSD → 포토샵에서 바로 수정');
+  feature(s, fx, P(394), fw, '04', '레이어 분해 편집', '피사체 · 텍스트 자동 분리 → 브라우저에서 재배치');
+  chips(s, fx, P(478), [{t:'라이트 · 에디터 2모드'},{t:'Gemini(나노 바나나) · ChatGPT 2.0'}]);
+  chips(s, fx, P(508), [{t:'크리에이티브 생성 · 사이즈 변형 · 영상 생성', gray:true}]);
   s.addText('화면 — 운영 중 Banner Fit 실제 캡처. 편집 화면 시안은 당사 집행 소재.',
-    { x:fx, y:P(590), w:fw, h:P(26), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
+    { x:fx, y:P(548), w:fw, h:P(26), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
   shot(s, 'bannerfit-form',   P(470), P(166), P(276), '① 라이트 모드 · 6단계 입력');
   shot(s, 'bannerfit-chat',   P(758), P(160), P(454), '② 에디터 모드 · 한 줄 지시');
   shot(s, 'bannerfit-editor', P(540), P(356), P(600), '③ 레이어 편집 · 사이즈 변형 · 다운로드');
-  foot(s, 'Banner Fit · 배너핏', '04 / 09');
+  foot(s, 'Banner Fit · 배너핏', '04 / 08');
 })();
 
 /* ───────── 05 Reels Studio ───────── */
@@ -343,33 +342,33 @@ function chips(s, x, y, items){
   head(s, '02 VIDEO · M AI PLATFORM', 'Reels Studio — ', '프롬프트 대신 질문 응답',
        '한 줄 아이디어 → AI 초안 → 컷 승인 → 렌더, 5단계 진행', 'reel-studio.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '한 줄 입력', '문장 하나 → AI가 질문 완성 → 초안 스토리보드');
-  feature(s, fx, P(238), fw, '02', '기획 5단계', '아이디어 → 의도 → 표현 → 스토리보드 → 완료 · 2/4/7컷');
-  feature(s, fx, P(316), fw, '03', '표현 선택형', '영상 종류 · 화면 스타일 · 분위기 · 등장인물 선택');
-  feature(s, fx, P(394), fw, '04', '컷 승인형 렌더', '컷별 승인·재생성 → VEO 3.1 / Gemini Omni 렌더');
-  chips(s, fx, P(474), [{t:'쇼츠 9:16'},{t:'유튜브 16:9'},{t:'인스타 1:1'}]);
-  chips(s, fx, P(504), [{t:'배너 영상 · 시작/엔드 프레임', gray:true}]);
+  feature(s, fx, P(160), fw, '01', '프롬프트 없이 시작', '대상 · 목적 · 메시지 질문형 대화 → 스타일 · 컷 구성은 AI');
+  feature(s, fx, P(238), fw, '02', '초안 스토리보드 자동 생성', '대본 · 키프레임 포함 콘티 전체를 먼저 제안');
+  feature(s, fx, P(316), fw, '03', '컷 단위 승인형 디렉팅', '컷 재생성 · 키프레임 교체 · 순서 변경 — 컷 간 일관성 유지');
+  feature(s, fx, P(394), fw, '04', '승인한 만큼만 비용', '대본 · 키프레임 무료 · 승인된 성공 컷만 차감');
+  chips(s, fx, P(474), [{t:'쇼츠 9:16 · 유튜브 16:9 · 인스타 1:1'}]);
+  chips(s, fx, P(504), [{t:'짧게 2컷 · 기본 4컷 · 길게 7컷'},{t:'VEO 3.1 / Gemini Omni', gray:true}]);
   quote(s, fx, P(536), fw, "'만들기'가 아니라 '다듬기'부터", 'AI가 대본·키프레임 포함 콘티 전체를 먼저 제안 · 승인한 컷만 과금');
   s.addText('참고 — 국내 숏폼 외주 단가 15만~200만원, 기간 2~3주(크몽 단가 가이드 기준).',
     { x:fx, y:P(590), w:fw, h:P(26), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
   shot(s, 'reels-idea',  P(470), P(168), P(300), '① 한 줄 아이디어 + 5단계');
   shot(s, 'reels-style', P(790), P(160), P(422), '② 표현 · 스타일 선택');
   shot(s, 'reels-video', P(530), P(384), P(520), '③ 배너 영상 · VEO 3.1 / Gemini Omni');
-  foot(s, 'Reels Studio · 릴스 스튜디오', '05 / 09');
+  foot(s, 'Reels Studio · 릴스 스튜디오', '05 / 08');
 })();
 
 /* ───────── 06 GEO Metric Care ───────── */
 (function(){
   const s = pres.addSlide(); base(s);
-  head(s, '03 VISIBILITY · AI LAB', 'AI LAB · GEO Metric Care — ', 'AI 기반 SEO + GEO 통합 분석',
-       '전통적인 SEO 점검과 AI 검색 최적화 분석을 한 번에 — 메타 태그 최적화 상태까지 점검', 'geo.mplanit.co.kr');
+  head(s, '03 VISIBILITY · AI LAB', 'GEO Metric Care — ', '브랜드 노출을 진단하고 개선하는 GEO 솔루션',
+       'GEO — ChatGPT · 네이버 AI 등 AI 답변에 브랜드가 언급·추천되도록 최적화하는 전략', 'geo.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '점수 3종 진단', '종합 · SEO · GEO 동시 산출 — 자사 84 / 95 / 72');
-  feature(s, fx, P(238), fw, '02', '판정 기준', '80↑ 인용 가능 · 70점대 기본 · 60↓ 개선 필요');
-  feature(s, fx, P(316), fw, '03', '진단 범위', 'ChatGPT · Gemini · Perplexity · 네이버 AI 브리핑');
-  feature(s, fx, P(394), fw, '04', '항목별 현재값 · 권장 기준', '인용 신뢰도 · 통계 포함 · 스키마 · 엔티티 연결성');
-  quote(s, fx, P(478), fw, '고객은 AI에게 묻고 있는데, 우리 브랜드는 AI 답변에 등장하고 있나요?',
-    '엠플랜잇 AEO·GEO 개선 가이드(2026.09)');
+  feature(s, fx, P(160), fw, '01', 'AI 가독성 진단', 'AI가 읽고 인용하기 쉬운 사이트인지 점검');
+  feature(s, fx, P(238), fw, '02', '네이버 AI 브리핑 대응', '국내 고객 접점인 네이버 AI까지 통합 점검');
+  feature(s, fx, P(316), fw, '03', '브랜드 신뢰도 분석', '홈페이지 · 블로그 · 카페 등 AI 참조 채널 분석');
+  feature(s, fx, P(394), fw, '04', '개선 가이드 제공', '노출 저해 요인 도출 → 개선 방향 제시');
+  quote(s, fx, P(478), fw, 'AI가 추천하는 브랜드, 지금 준비하세요',
+    '종합 · SEO · GEO 점수 진단 (80↑ 인용 가능 · 70점대 기본 · 60↓ 개선 필요)');
   const risks = [['제로클릭','오가닉 유입 20~30% 급감'],['추천 누락','AI 답변 후보군에서 제외'],['정보 왜곡','잘못된 정보로 신뢰 하락']];
   risks.forEach(function(r, i){
     const x = fx + i*P(128);
@@ -383,7 +382,7 @@ function chips(s, x, y, items){
   shot(s, 'geo-result',  P(600), P(350), P(560), '② 분석 결과 — 자사 진단(종합 84 / SEO 95 / GEO 72)');
   s.addText('점수는 자체 진단 기준입니다 — 실제 AI 답변 노출·인용률이나 검색순위를 뜻하지 않습니다.',
     { x:fx, y:P(590), w:fw, h:P(16), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX3 });
-  foot(s, 'AI LAB · GEO Metric Care Solution', '06 / 09');
+  foot(s, 'AI LAB · GEO Metric Care Solution — 흥국화재 TM 제안 장표(2026.09) 기준', '06 / 08');
 })();
 
 /* ───────── 07 커머스허브 + 애드리포트 ───────── */
@@ -431,7 +430,7 @@ function chips(s, x, y, items){
   shot(s, 'adreport-dashboard', P(466), P(150), P(540), '① 통합 대시보드 — 매체군별 성과 · 목표 진척');
   shot(s, 'adreport-goal',      P(766), P(362), P(442), '② 목표 현황 — 매체별 목표 대비 실적');
 
-  foot(s, '출처 · Similarweb AI Search Stats 2026 · OpenAI(2026.07) · 크몽 숏폼 단가 가이드 · 엠플랜잇 운영 자료(2026.09)', '07 / 09');
+  foot(s, '출처 · Similarweb AI Search Stats 2026 · OpenAI(2026.07) · 크몽 숏폼 단가 가이드 · 엠플랜잇 운영 자료(2026.09)', '07 / 08');
 })();
 
 /* ───────── 08 MI 솔루션 · 데이터 인프라 ───────── */
@@ -487,74 +486,8 @@ function chips(s, x, y, items){
                { text:t[1], options:{ fontFace:B, color:TX } }],
       { x:x+P(14), y:P(590), w:P(354), h:P(38), isTextBox:true, margin:0, valign:'middle', fontSize:8 });
   });
-  foot(s, 'MI 솔루션 · 데이터 인프라 · 엠플랜잇 자체 기술', '08 / 09');
+  foot(s, 'MI 솔루션 · 데이터 인프라 · 엠플랜잇 자체 기술', '08 / 08');
   s.addNotes('MI는 AI 솔루션이 아닌 데이터 인프라·운영 자동화 영역. 6종 솔루션이 공유하는 수집·정규화·집계 기반이 자체 기술임을 강조.');
-})();
-
-/* ───────── 09 제공 범위 · 표기 기준 ───────── */
-(function(){
-  const s = pres.addSlide(); base(s);
-  head(s, 'APPENDIX · 근거와 표기 기준', '제공 범위와 표기 기준 — ', '과장 없이, 확인된 것만',
-       '장표에 쓴 화면·수치·명칭의 출처와, 오해를 막기 위한 표기 원칙', '2026.09 기준');
-
-  const cols = [
-    { x:P(56), t:'자료 근거', ps:'이 장표에 쓰인 화면과 수치의 출처', tint:'FBFDFF', mark:'·', mc:SKY,
-      li:['제품 화면 — 사내 솔루션 소개 PPTX(배너핏 3장 · 릴스 스튜디오 4장 · GEO 2장), AD_report 화면 4종, 커머스허브 캡처',
-          '연동 사양 — 카카오쇼핑 API 서비스소개서(판매 채널 7 · 광고 매체 14 · 수집 주기)',
-          'GEO 기준 — AI 최적화 GEO 가이드(AX본부): 점수 해석 · 3대 리스크 · 개선 우선순위',
-          'MI — 사내 제공 정보(네이버 자동입찰 · 대량 통합 리포트). 공식 Solution 페이지는 M Ai Platform · MARS로 소개',
-          '시장 수치 — OpenAI(2026.07) · Similarweb AI Search Stats 2026 · 국내 광고업계 보도 · 크몽 숏폼 단가 가이드',
-          '공개 프로젝트 · 파트너 — 엠플랜잇 공식 홈페이지 공개 기준'] },
-    { x:P(660), t:'표기 기준', ps:'제안·설명 시 지켜야 할 범위', tint:'FFFBF5', mark:'!', mc:'D97706',
-      li:['전체 구조도는 서비스 포트폴리오입니다 — 솔루션 간 자동 통합 아키텍처를 뜻하지 않습니다',
-          'GEO 점수는 자체 진단 기준입니다 — AI 답변 노출·인용률이나 검색순위가 아닙니다',
-          '화면 수치는 캡처 시점 데이터이며 광고주명·금액은 마스킹했습니다 — 현재 성과가 아닙니다',
-          '채널·매체별 연동 범위와 집계 주기가 다릅니다 — 판매 매출과 광고 기여 성과는 구분합니다',
-          '카카오쇼핑(톡스토어)은 연동 승인 대기 상태입니다',
-          'MI 기능 범위·오픈 일정, 소상공인용 상품은 확정 전입니다 — 도입 상담에서 확정',
-          '광고주 프로젝트 수행 경험과 AI 솔루션 도입 실적은 별개입니다'] }];
-
-  cols.forEach(function(c){
-    const w = P(564);
-    s.addShape(pres.ShapeType.roundRect, { x:c.x, y:P(152), w, h:P(356), rectRadius:0.05,
-      fill:{ color:c.tint }, line:{ color: c.tint==='FFFBF5' ? 'F0E2CC' : LINE, width:0.75 } });
-    s.addText(c.t, { x:c.x+P(18), y:P(168), w:w-P(36), h:P(20), isTextBox:true, margin:0, fontFace:H, fontSize:12, color:INK });
-    s.addText(c.ps, { x:c.x+P(18), y:P(190), w:w-P(36), h:P(16), isTextBox:true, margin:0, fontFace:B, fontSize:8.5, color:TX2 });
-    c.li.forEach(function(t, i){
-      const parts = t.split(' — ');
-      const runs = parts.length > 1
-        ? [{ text:c.mark+'  ', options:{ color:c.mc, fontFace:H } },
-           { text:parts[0]+' — ', options:{ color:NAVY, fontFace:H } },
-           { text:parts.slice(1).join(' — '), options:{ color:TX, fontFace:B } }]
-        : [{ text:c.mark+'  ', options:{ color:c.mc, fontFace:H } },
-           { text:t, options:{ color:TX, fontFace:B } }];
-      s.addText(runs, { x:c.x+P(18), y:P(216)+i*P(42), w:w-P(36), h:P(38), isTextBox:true, margin:0,
-        fontSize:8, lineSpacingMultiple:1.25 });
-    });
-  });
-
-  const mk = [['주간 10억 명','ChatGPT 주간 활성 이용자(OpenAI, 2026.07)'],
-              ['약 40%','2026년 AI 제작 디지털 광고 비중 전망'],
-              ['0.8~1.3%','AI 검색 클릭률(구글 약 29%) — Similarweb 2026']];
-  mk.forEach(function(t, i){
-    const x = P(56) + i*P(394);
-    s.addShape(pres.ShapeType.roundRect, { x, y:P(522), w:P(382), h:P(36), rectRadius:0.06,
-      fill:{ color:BG2 }, line:{ color:LINE, width:0.75 } });
-    s.addText([{ text:t[0]+'  ', options:{ fontFace:H, color:NAVY } },
-               { text:t[1], options:{ fontFace:B, color:TX } }],
-      { x:x+P(14), y:P(522), w:P(354), h:P(36), isTextBox:true, margin:0, valign:'middle', fontSize:7.5 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x:P(56), y:P(570), w:P(1168), h:P(58), rectRadius:0.05,
-    fill:{ color:'334155' }, line:{ color:'334155' } });
-  s.addText('기능·연동·운영 범위는 도입 상담에서 확정합니다', { x:P(76), y:P(580), w:P(700), h:P(22),
-    isTextBox:true, margin:0, fontFace:H, fontSize:12, color:'FFFFFF' });
-  s.addText('기술을 고르고, 브랜드에 맞추고, 실행을 돕습니다', { x:P(76), y:P(602), w:P(700), h:P(20),
-    isTextBox:true, margin:0, fontFace:B, fontSize:9, color:'D9DEE7' });
-  s.addShape(pres.ShapeType.roundRect, { x:P(960), y:P(582), w:P(244), h:P(34), rectRadius:0.1,
-    fill:{ color:'FFFFFF' }, line:{ color:'FFFFFF' } });
-  s.addText('mplanit@mplanit.co.kr', { x:P(960), y:P(582), w:P(244), h:P(34), isTextBox:true, margin:0,
-    align:'center', valign:'middle', fontFace:H, fontSize:9, color:'334155' });
-  foot(s, 'Appendix · 근거와 표기 기준', '09 / 09');
 })();
 
 pres.writeFile({ fileName: path.join(__dirname, '..', 'mplanit-ai-solution.pptx') })
