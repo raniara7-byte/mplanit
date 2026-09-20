@@ -20,8 +20,9 @@
   - 인쇄(Ctrl/Cmd+P) 시 장표당 1페이지 PDF
 - **단일 HTML(로컬 확인용)**: `ai-solution/mplanit-ai-solution.html` — 이미지·폰트 내장, 파일 하나만 열면 됨
   (생성: `python3 ai-solution/tools/build-standalone.py`)
-- **PDF**: `ai-solution/mplanit-ai-solution.pdf` (8페이지, 1280×720)
-- **PPT**: `ai-solution/mplanit-ai-solution.pptx` (16:9, 텍스트 편집 가능 · 생성 스크립트 `ai-solution/tools/build-pptx.js`)
+- **PPT·PDF는 저장소에 두지 않습니다** — 필요할 때 아래로 생성합니다
+  - PPT: `node ai-solution/tools/build-pptx.js` (pptxgenjs 필요)
+  - PDF: 브라우저로 `ai-solution/index.html`을 열고 인쇄(Ctrl/Cmd+P) → 장표당 1페이지
 - **서체**: `ai-solution/fonts/` — 페이퍼로지 4/7/8 (사내 PPT 테마와 동일)
 - **이미지**: `ai-solution/assets/` — 사내 PPT(2026.09)에서 추출한 실제 제품 화면과 정식 로고
 - **제작 규칙**: `.claude/skills/mplanit-deck/SKILL.md` — 서체(페이퍼로지)·컬러(네이비 #1B468B / 스카이 #399BC1)·
