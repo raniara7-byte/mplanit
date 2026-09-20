@@ -10,13 +10,15 @@
 
 ---
 
-## 엠플랜잇 AI 솔루션 소개서 (5장)
+## 엠플랜잇 AI 솔루션 소개서 (6장)
 
-광고주·클라이언트 제안용 AI 솔루션 소개 장표 — Banner Fit / Reels Studio / GEO Metric Care / 커머스허브 / 애드리포트
+광고주·클라이언트 제안용 AI 솔루션 소개 장표 — AI LAB 통합 / Banner Fit / Reels Studio / GEO Metric Care / 커머스허브 / 애드리포트
 
 - **웹(장표)**: `ai-solution/index.html` → https://raniara7-byte.github.io/mplanit/ai-solution/
   - 좌우 방향키·스크롤·하단 인디케이터로 이동, 브라우저 인쇄(Ctrl/Cmd+P)로 16:9 PDF 저장
-- **PDF**: `ai-solution/mplanit-ai-solution.pdf` (5페이지, 1280×720)
+- **PDF**: `ai-solution/mplanit-ai-solution.pdf` (6페이지, 1280×720)
+- **PPT**: `ai-solution/mplanit-ai-solution.pptx` (16:9, 텍스트 편집 가능 · 생성 스크립트 `ai-solution/tools/build-pptx.js`)
+- **서체**: `ai-solution/fonts/` — 페이퍼로지 4/7/8 (사내 PPT 테마와 동일)
 - **이미지**: `ai-solution/assets/` — 사내 PPT(2026.09)에서 추출한 실제 제품 화면과 정식 로고
 - **제작 규칙**: `.claude/skills/mplanit-deck/SKILL.md` — 서체(페이퍼로지)·컬러(네이비 #1B468B / 스카이 #399BC1)·
   장표 구조·문구 규칙을 정리한 사내 장표 스킬. 다음 장표도 이 규칙으로 만든다.

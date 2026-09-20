@@ -28,12 +28,14 @@ AI가 만든 티가 나는 장표(검은 배경 + 네온 그라데이션 + 가�
 
 - 배경은 흰색/연회색. **다크 테마 금지.**
 - 상단 5px 라인(navy→sky 그라데이션)이 모든 장표의 공통 시그니처.
-- 서체: 페이퍼로지(Paperlogy). 웹에서는 설치 서체를 우선 쓰고 Pretendard로 폴백한다.
+- 서체: **페이퍼로지(Paperlogy)** 고정. `ai-solution/fonts/`에 4Regular · 7Bold · 8ExtraBold woff2(각 11,723자 전체) 동봉.
   ```css
-  @font-face{font-family:"PaperlogyLocal";font-weight:800;
-    src:local("Paperlogy 8 ExtraBold"),local("페이퍼로지 8 ExtraBold")}
+  @font-face{font-family:"Paperlogy";font-weight:800;
+    src:local("Paperlogy 8 ExtraBold"),local("페이퍼로지 8 ExtraBold"),
+        url("fonts/Paperlogy-8ExtraBold.woff2") format("woff2")}
   ```
-  ※ 레포에 있는 Paperlogy woff2는 **서브셋(292자)**이라 새 문구에서 글자가 깨진다. 재사용 금지.
+  ※ 루트 `index.html`에 박혀 있는 Paperlogy woff2는 **서브셋(292자)**이라 새 문구에서 글자가 깨진다. 재사용 금지.
+  ※ PPT에서는 서체 이름을 `페이퍼로지 8 ExtraBold` / `페이퍼로지 4 Regular`로 지정한다(사내 PPT 테마와 동일).
 - 로고: `assets/logo-mplanit.png` (PPT 원본에서 추출한 정식 로고).
 
 ## 3. 장표 구조(사내 PT 관습)
@@ -54,9 +56,13 @@ AI가 만든 티가 나는 장표(검은 배경 + 네온 그라데이션 + 가�
   원본이 들어 있으면 거기서 추출한다.
 - 추출 후 반드시 여백·검은 띠를 잘라내고 폭 1200px WebP(q82)로 저장한다.
 - 예시 수치를 쓸 때는 캡션에 "예시"라고 적는다. 실제 진단·운영 데이터는 출처를 밝힌다.
+- **광고주 데이터가 찍힌 화면은 마스킹 후 사용한다.** 광고주명·광고비·전환수·상품 URL은
+  가우시안 블러 처리하고 캡션에 "마스킹 처리"를 명시한다. 메뉴 구조는 남겨도 된다.
 
 ## 5. 문구 규칙
 
+- **명사형으로 끊어 쓴다.** "…합니다" 서술형 설명 금지, 한 항목 2줄 이내.
+  (예: ○ "입력 6단계 · 매체 규격 23종+ · 레이어 분리 · PSD" / ✗ "…를 지정할 수 있습니다")
 - 제목은 **주장 + 근거**. "AI로 혁신합니다" 같은 문장은 쓰지 않는다.
 - 제품 설명은 실제 화면의 메뉴·버튼·옵션 이름을 그대로 쓴다.
   (예: "라이트/에디터 모드", "짧게 2컷·기본 4컷·길게 7컷", "VEO 3.1 / Gemini Omni")
@@ -69,3 +75,6 @@ AI가 만든 티가 나는 장표(검은 배경 + 네온 그라데이션 + 가�
 2. 부족한 시장 근거만 웹에서 보강하고 출처를 적는다.
 3. HTML 작성 → Chromium으로 장표마다 스크린샷을 찍어 **넘침·겹침을 눈으로 확인**한다.
 4. `page.pdf(width=1280px,height=720px,print_background=True)`로 PDF를 뽑아 함께 커밋한다.
+5. PPT가 필요하면 `tools/build-pptx.js`(pptxgenjs)로 산출한다. 좌표는 **HTML px × 13.3333 / 1280 = inch**로
+   그대로 환산하면 HTML 덱과 같은 화면이 나온다. 산출 후 `validate.py`와 슬라이드 경계 밖 도형 검사를 돌린다.
+   (이 컨테이너의 LibreOffice는 변환이 되지 않아 PPT 렌더 QA는 불가 — 좌표 환산과 HTML 렌더로 대신한다.)
