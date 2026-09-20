@@ -135,12 +135,9 @@ function chips(s, x, y, items){
   s.addText([{ text:'제작 · 노출 · 판매 · 성과\n', options:{ color:INK } },
              { text:'광고 실무 전 과정의 AI 전환', options:{ color:NAVY } }],
     { x:P(56), y:P(128), w:P(900), h:P(110), isTextBox:true, margin:0, fontFace:H, fontSize:30, lineSpacingMultiple:1.16 });
-  s.addText([{ text:'M Ai Platform', options:{ fontFace:H, color:NAVY } },
-             { text:' — AI 그로스 통합 플랫폼(소재 제작 · 실시간 통합 리포트)  +  ', options:{ fontFace:B, color:TX } },
-             { text:'AI LAB', options:{ fontFace:H, color:NAVY } },
-             { text:' — GEO Metric Care(SEO + GEO 통합 분석)\n', options:{ fontFace:B, color:TX } },
-             { text:'AI 솔루션 5종 + 이를 떠받치는 데이터 인프라(MI) — 수집·정규화·집계까지 자체 기술', options:{ fontFace:B, color:TX } }],
-    { x:P(56), y:P(246), w:P(1160), h:P(20), isTextBox:true, margin:0, fontSize:10.5 });
+  s.addText([{ text:'AI 솔루션 5종 + 데이터 인프라 1', options:{ fontFace:H, color:NAVY } },
+             { text:'  —  M Ai Platform · AI LAB · 커머스허브 · MI', options:{ fontFace:B, color:TX } }],
+    { x:P(56), y:P(248), w:P(1160), h:P(22), isTextBox:true, margin:0, fontSize:12 });
 
   const flow = [['제작','Banner Fit · Reels Studio'],['노출','GEO Metric Care'],['판매','커머스허브'],
                 ['성과','애드리포트'],['기반','MI · 데이터 인프라']];
@@ -160,12 +157,12 @@ function chips(s, x, y, items){
   });
 
   const sols = [
-    ['배너핏','BANNER FIT','배너 시안 생성 · 매체 규격 변형 · 레이어 편집 · 영상 전환','라이트 · 에디터 2모드'],
-    ['릴스 스튜디오','REELS STUDIO','한 줄 아이디어 · 기획 노드 · 컷별 프롬프트 · 모델 선택','컷 승인형 렌더'],
-    ['지오 메트릭 케어','GEO METRIC CARE','AI 검색 노출 진단 · 점수화 · 개선 가이드 · 정기 재측정','종합 · SEO · GEO'],
-    ['커머스허브','COMMERCE HUB','7개 마켓 주문 · 배송 · 정산 · 재고 통합 관리','매시 주문 · 06:30 정산'],
-    ['애드리포트','AD REPORT','14개 매체 집행 현황 · 전환 · ROAS · 알림 · 리포트','성과 이상 즉시 알림'],
-    ['MI 솔루션','DATA INFRA · AI 솔루션 아님','네이버 자동입찰 · 대량 통합 리포트 · 통합 데이터 분석 · 인프라 구성','엠플랜잇 기술 기반']];
+    ['배너핏','BANNER FIT','배너 생성 · 규격 변형 · 레이어 편집 · 영상','라이트 · 에디터 2모드'],
+    ['릴스 스튜디오','REELS STUDIO','한 줄 입력 · 컷 승인형 숏폼 제작','컷 승인형 렌더'],
+    ['지오 메트릭 케어','GEO METRIC CARE','AI 검색 노출 진단 · 개선 가이드','종합 · SEO · GEO'],
+    ['커머스허브','COMMERCE HUB','7개 마켓 주문 · 정산 · 재고 통합','매시 주문 · 06:30 정산'],
+    ['애드리포트','AD REPORT','14개 매체 성과 · ROAS · 알림','성과 이상 즉시 알림'],
+    ['MI 솔루션','DATA INFRA · AI 솔루션 아님','자동입찰 · 대량 리포트 · 데이터 인프라','엠플랜잇 기술 기반']];
   const cw = P(186), gap = P(10);
   sols.forEach(function(so, i){
     const x = P(56) + i*(cw+gap);
@@ -186,25 +183,13 @@ function chips(s, x, y, items){
       fontFace:H, fontSize:7, color:NAVY });
   });
 
-  const stats = [['주간 10억 명','ChatGPT 주간 활성 이용자 — 검색 시작점 이동'],
-                 ['약 40%','2026년 AI 제작 디지털 광고 비중 전망'],
-                 ['0.8~1.3%','AI 검색 클릭률(구글 29%) — 인용 없으면 유입 없음']];
-  stats.forEach(function(st, i){
-    const x = P(56) + i*P(392);
-    s.addShape(pres.ShapeType.rect, { x, y:P(538), w:P(3), h:P(46), fill:{ color:SKY } });
-    s.addText(st[0], { x:x+P(12), y:P(534), w:P(360), h:P(26), isTextBox:true, margin:0, fontFace:H, fontSize:14, color:NAVY });
-    s.addText(st[1], { x:x+P(12), y:P(560), w:P(360), h:P(26), isTextBox:true, margin:0,
-      fontFace:B, fontSize:8, color:TX, lineSpacingMultiple:1.2 });
-  });
-  medias(s, P(56), P(596), [{label:'연동 광고 매체 14'}].concat(MEDIA_AD)
+  medias(s, P(56), P(538), [{label:'연동 광고 매체 14'}].concat(MEDIA_AD)
     .concat([{label:'판매 채널 7'}]).concat(MEDIA_CH), P(1168));
   s.addText([{ text:'공개 프로젝트 ', options:{ fontFace:H, color:TX2 } },
-             { text:'삼성전자 DS · AIA생명 · 쿠쿠전자   |   ', options:{ fontFace:B, color:TX3 } },
+             { text:'삼성전자 DS · AIA생명 · 쿠쿠전자    ', options:{ fontFace:B, color:TX3 } },
              { text:'공식 파트너 ', options:{ fontFace:H, color:TX2 } },
-             { text:'네이버 · 카카오 · 크리테오 — 공식 홈페이지 공개 기준(광고 실행 경험이며 AI 솔루션 도입 실적과 별개)', options:{ fontFace:B, color:TX3 } }],
-    { x:P(56), y:P(644), w:P(1168), h:P(14), isTextBox:true, margin:0, fontSize:6.5 });
-  s.addText('출처 · OpenAI(2026.07), Similarweb AI Search Stats 2026, 국내 광고업계 AI 제작 비중 전망 보도(2025.10) · 매체/채널 표기는 연동 현황 안내용',
-    { x:P(56), y:P(658), w:P(1168), h:P(14), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3 });
+             { text:'네이버 · 카카오 · 크리테오 — 공식 홈페이지 공개 기준', options:{ fontFace:B, color:TX3 } }],
+    { x:P(56), y:P(606), w:P(1168), h:P(16), isTextBox:true, margin:0, fontSize:7.5 });
   foot(s, '엠플랜잇 AIU본부 · M Ai Platform · AI LAB · mplanit.co.kr', '01 / 09');
   s.addNotes('표지 — 솔루션 5종과 시장 근거 3가지. 제작·노출·판매·성과 흐름으로 설명.');
 })();
@@ -331,10 +316,10 @@ function chips(s, x, y, items){
   head(s, '01 CREATIVE · M AI PLATFORM', 'Banner Fit — ', '배너 1장이 아닌 캠페인 한 세트',
        '시안 생성 · 규격 변형 · 레이어 편집 · 영상 전환, 한 도구 안에서', 'banner-fit.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '입력 6단계', '기본정보 · 이미지 업로드 · 스타일 · 텍스트&폰트 · 출력 옵션 · 생성 모델. 로고 노출 위치 9분할 지정.');
-  feature(s, fx, P(238), fw, '02', '2가지 작업 모드', '라이트 — 양식 입력형 / 에디터 — 대화 지시형. 한 줄 요청으로도 시안 생성.');
-  feature(s, fx, P(316), fw, '03', '규격 변형 · 레이어 편집', '1:1 · 4:3 · 16:9 · 9:16 기본 비율 + 매체 규격 23종 이상. 레이어 분리 후 브라우저 수정.');
-  feature(s, fx, P(394), fw, '04', '생성 모델 선택', '이미지 Gemini(나노 바나나) · ChatGPT 2.0. 완성 시안은 영상 생성 탭으로 연결.');
+  feature(s, fx, P(160), fw, '01', '입력 6단계', '기본정보 · 이미지 · 스타일 · 텍스트 · 출력 · 모델');
+  feature(s, fx, P(238), fw, '02', '2가지 작업 모드', '라이트 양식 입력 / 에디터 대화 지시');
+  feature(s, fx, P(316), fw, '03', '규격 변형 · 레이어 편집', '기본 4비율 + 매체 규격 23종 · 레이어 분리 수정');
+  feature(s, fx, P(394), fw, '04', '생성 모델 선택', 'Gemini(나노 바나나) · ChatGPT 2.0 → 영상 생성 연결');
   chips(s, fx, P(474), [{t:'크리에이티브 생성'},{t:'소재 사이즈 변형'},{t:'영상 생성'}]);
   chips(s, fx, P(504), [{t:'편집하기 · 프로젝트', gray:true}]);
   quote(s, fx, P(536), fw, '한 번 입력으로 즉시 생성', '이미지 업로드와 요청 한 줄 → 배경 · 카피 · 레이아웃 시안 동시 산출');
@@ -352,10 +337,10 @@ function chips(s, x, y, items){
   head(s, '02 VIDEO · M AI PLATFORM', 'Reels Studio — ', '프롬프트 대신 질문 응답',
        '한 줄 아이디어 → AI 초안 → 컷 승인 → 렌더, 5단계 진행', 'reel-studio.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '한 줄 입력', '상황 한 문장 입력 → AI가 질문 자동 완성 → 초안 스토리보드 제시.');
-  feature(s, fx, P(238), fw, '02', '기획 5단계', '아이디어 · 의도 · 표현 · 스토리보드 · 완료. 길이 2컷 / 4컷 / 7컷 선택.');
-  feature(s, fx, P(316), fw, '03', '표현 선택형', '영상 종류(실사 · 3D · 현실+3D · 웹툰) · 화면 스타일 · 분위기 · 주인공/조연.');
-  feature(s, fx, P(394), fw, '04', '컷 승인형 렌더', '컷별 승인 · 재생성 후 VEO 3.1(1080p) 또는 Gemini Omni(720p)로 출력.');
+  feature(s, fx, P(160), fw, '01', '한 줄 입력', '문장 하나 → AI가 질문 완성 → 초안 스토리보드');
+  feature(s, fx, P(238), fw, '02', '기획 5단계', '아이디어 → 의도 → 표현 → 스토리보드 → 완료 · 2/4/7컷');
+  feature(s, fx, P(316), fw, '03', '표현 선택형', '영상 종류 · 화면 스타일 · 분위기 · 등장인물 선택');
+  feature(s, fx, P(394), fw, '04', '컷 승인형 렌더', '컷별 승인·재생성 → VEO 3.1 / Gemini Omni 렌더');
   chips(s, fx, P(474), [{t:'쇼츠 9:16'},{t:'유튜브 16:9'},{t:'인스타 1:1'}]);
   chips(s, fx, P(504), [{t:'배너 영상 · 시작/엔드 프레임', gray:true}]);
   quote(s, fx, P(536), fw, "'만들기'가 아니라 '다듬기'부터", 'AI가 대본·키프레임 포함 콘티 전체를 먼저 제안 · 승인한 컷만 과금');
@@ -373,10 +358,10 @@ function chips(s, x, y, items){
   head(s, '03 VISIBILITY · AI LAB', 'AI LAB · GEO Metric Care — ', 'AI 기반 SEO + GEO 통합 분석',
        '전통적인 SEO 점검과 AI 검색 최적화 분석을 한 번에 — 메타 태그 최적화 상태까지 점검', 'geo.mplanit.co.kr');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '점수 3종 진단', '종합 · SEO · GEO 동시 산출. 자사 사이트 기준 84 / 95 / 72.');
-  feature(s, fx, P(238), fw, '02', '판정 기준', '80점 이상 인용 가능 · 70점대 기본 충족 · 60점 이하 구조 개선 필요.');
-  feature(s, fx, P(316), fw, '03', '진단 범위', 'ChatGPT · Gemini · Perplexity · 네이버 AI 브리핑(Yeti · 서치어드바이저).');
-  feature(s, fx, P(394), fw, '04', '항목별 현재값 · 권장 기준', '인용 신뢰도(E-E-A-T 70점 이상) · 통계 포함 · 스키마 · 엔티티 연결성.');
+  feature(s, fx, P(160), fw, '01', '점수 3종 진단', '종합 · SEO · GEO 동시 산출 — 자사 84 / 95 / 72');
+  feature(s, fx, P(238), fw, '02', '판정 기준', '80↑ 인용 가능 · 70점대 기본 · 60↓ 개선 필요');
+  feature(s, fx, P(316), fw, '03', '진단 범위', 'ChatGPT · Gemini · Perplexity · 네이버 AI 브리핑');
+  feature(s, fx, P(394), fw, '04', '항목별 현재값 · 권장 기준', '인용 신뢰도 · 통계 포함 · 스키마 · 엔티티 연결성');
   quote(s, fx, P(478), fw, '고객은 AI에게 묻고 있는데, 우리 브랜드는 AI 답변에 등장하고 있나요?',
     '엠플랜잇 AEO·GEO 개선 가이드(2026.09)');
   const risks = [['제로클릭','오가닉 유입 20~30% 급감'],['추천 누락','AI 답변 후보군에서 제외'],['정보 왜곡','잘못된 정보로 신뢰 하락']];
@@ -434,22 +419,12 @@ function chips(s, x, y, items){
         { x:x+P(16), y:endY+P(8)+i*P(22), w:w-P(32), h:P(20), isTextBox:true, margin:0, fontSize:8 });
     });
   });
-  s.addText('화면 — 운영 중 애드리포트 실제 캡처(수치는 캡처 시점 기준, 광고주명·금액 마스킹).\n채널·매체별 연동 범위와 집계 주기가 다르며, 판매 매출과 광고 기여 성과는 구분합니다.',
-    { x:P(56), y:P(560), w:P(376), h:P(30), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3, lineSpacingMultiple:1.25 });
+  s.addText('화면 — 실제 캡처(캡처 시점 수치 · 광고주명·금액 마스킹) · 채널별 연동 범위와 집계 주기 상이 · 판매 매출과 광고 기여 성과 구분',
+    { x:P(56), y:P(556), w:P(376), h:P(34), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3, lineSpacingMultiple:1.25 });
 
   shot(s, 'adreport-dashboard', P(466), P(150), P(540), '① 통합 대시보드 — 매체군별 성과 · 목표 진척');
   shot(s, 'adreport-goal',      P(766), P(362), P(442), '② 목표 현황 — 매체별 목표 대비 실적');
 
-  s.addShape(pres.ShapeType.roundRect, { x:P(56), y:P(576), w:P(1168), h:P(62), rectRadius:0.05,
-    fill:{ color:NAVY }, line:{ color:NAVY } });
-  s.addText('도입 3단계 — 진단 → 연동 세팅 → 운영', { x:P(76), y:P(586), w:P(700), h:P(22), isTextBox:true,
-    margin:0, fontFace:H, fontSize:12, color:'FFFFFF' });
-  s.addText('광고주 성과 · 대행사 공수 · 1인 기업 인력 대체', { x:P(76), y:P(608), w:P(700), h:P(20), isTextBox:true,
-    margin:0, fontFace:B, fontSize:9, color:'D6E6F7' });
-  s.addShape(pres.ShapeType.roundRect, { x:P(940), y:P(590), w:P(264), h:P(34), rectRadius:0.1,
-    fill:{ color:'FFFFFF' }, line:{ color:'FFFFFF' } });
-  s.addText('엠플랜잇 AIU본부 · mplanit.co.kr', { x:P(940), y:P(590), w:P(264), h:P(34), isTextBox:true,
-    margin:0, align:'center', valign:'middle', fontFace:H, fontSize:9, color:NAVY });
   foot(s, '출처 · Similarweb AI Search Stats 2026 · OpenAI(2026.07) · 크몽 숏폼 단가 가이드 · 엠플랜잇 운영 자료(2026.09)', '07 / 09');
 })();
 
@@ -460,13 +435,13 @@ function chips(s, x, y, items){
        '매체·마켓·전환 데이터를 한 기준으로 모으는 수집·정규화·집계 구조 — 엠플랜잇 자체 구축',
        'MI Solution · Data Infra');
   const fx = P(56), fw = P(376);
-  feature(s, fx, P(160), fw, '01', '네이버 검색광고 자동입찰', '키워드 순위 목표 기반 입찰 조정 · 시간대/요일 규칙 · 예산 소진 제어. 애드몬스터 유형 기능.');
-  feature(s, fx, P(238), fw, '02', '대량 통합 리포트', '다계정 · 다광고주 실적 일괄 수집 · 키워드 단위 대량 추출 · 정기 자동 발송.');
-  feature(s, fx, P(316), fw, '03', '통합 데이터 분석', '매체 광고비 · 마켓 매출 · 전환 데이터를 단일 지표 체계로 결합. 광고주·브랜드·상품 단위 교차 분석.');
-  feature(s, fx, P(394), fw, '04', '인프라 구성', 'API 수집 스케줄러 · 정규화 · 적재 · 권한 분리까지 직접 설계·운영. 외부 솔루션 의존 없음.');
+  feature(s, fx, P(160), fw, '01', '네이버 검색광고 자동입찰', '순위 목표 기반 입찰 조정 · 시간대 규칙 · 예산 제어');
+  feature(s, fx, P(238), fw, '02', '대량 통합 리포트', '다계정 일괄 수집 · 키워드 단위 추출 · 자동 발송');
+  feature(s, fx, P(316), fw, '03', '통합 데이터 분석', '광고비 · 매출 · 전환을 단일 지표 체계로 결합');
+  feature(s, fx, P(394), fw, '04', '인프라 구성', '수집 · 정규화 · 적재 · 권한 분리 직접 설계·운영');
   quote(s, fx, P(474), fw, 'AI 솔루션이 올라서는 바닥', '데이터를 모으고 맞추는 인프라가 엠플랜잇의 기술 기반입니다');
-  s.addText('MI는 AI 기능이 아닌 운영 자동화·데이터 기술 영역 — 기능 범위·오픈 일정은 내부 확정 후 갱신.\n공식 홈페이지 Solution 페이지에는 M Ai Platform · MARS(통합 리포트 분석 · 리포트 자동화)로 소개되어 있으며,\n이 장표의 MI 명칭과 자동입찰 설명은 사내 제공 정보 기준입니다.',
-    { x:fx, y:P(526), w:fw, h:P(42), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3, lineSpacingMultiple:1.25 });
+  s.addText('AI 기능이 아닌 운영 자동화·데이터 기술 영역 · 기능 범위·오픈 일정 내부 확정 후 갱신\n공식 Solution 페이지는 M Ai Platform · MARS로 소개 — MI 명칭·자동입찰은 사내 정보 기준',
+    { x:fx, y:P(528), w:fw, h:P(34), isTextBox:true, margin:0, fontFace:B, fontSize:6.5, color:TX3, lineSpacingMultiple:1.3 });
 
   const boxes = [
     { y:P(152), t:'데이터 파이프라인 — 수집에서 판단까지', tint:'F2F5FA',
@@ -495,16 +470,16 @@ function chips(s, x, y, items){
     });
   });
 
-  const tg = [['외부 툴 구독 대체','입찰관리 툴 이용료 없이 사내 인프라로 운영'],
-              ['데이터 단절 없음','입찰 · 리포트 · 매출이 애드리포트/커머스허브와 같은 기준'],
-              ['확장 기반','새 매체·마켓 추가 시 수집 계층만 붙이면 전 솔루션에 반영']];
+  const tg = [['외부 툴 구독 대체','사내 인프라 운영'],
+              ['데이터 단절 없음','애드리포트·커머스허브와 같은 기준'],
+              ['확장 기반','수집 계층만 추가하면 전 솔루션 반영']];
   tg.forEach(function(t, i){
     const x = P(56) + i*P(394);
-    s.addShape(pres.ShapeType.roundRect, { x, y:P(548), w:P(382), h:P(74), rectRadius:0.06,
-      fill:{ color:'FBFDFF' }, line:{ color:LINE, width:0.75 } });
-    s.addText(t[0], { x:x+P(16), y:P(560), w:P(350), h:P(18), isTextBox:true, margin:0, fontFace:H, fontSize:10, color:NAVY });
-    s.addText(t[1], { x:x+P(16), y:P(582), w:P(350), h:P(32), isTextBox:true, margin:0,
-      fontFace:B, fontSize:8, color:TX, lineSpacingMultiple:1.25 });
+    s.addShape(pres.ShapeType.roundRect, { x, y:P(590), w:P(382), h:P(38), rectRadius:0.06,
+      fill:{ color:BG2 }, line:{ color:LINE, width:0.75 } });
+    s.addText([{ text:t[0]+'  ', options:{ fontFace:H, color:NAVY } },
+               { text:t[1], options:{ fontFace:B, color:TX } }],
+      { x:x+P(14), y:P(590), w:P(354), h:P(38), isTextBox:true, margin:0, valign:'middle', fontSize:8 });
   });
   foot(s, 'MI 솔루션 · 데이터 인프라 · 엠플랜잇 자체 기술', '08 / 09');
   s.addNotes('MI는 AI 솔루션이 아닌 데이터 인프라·운영 자동화 영역. 6종 솔루션이 공유하는 수집·정규화·집계 기반이 자체 기술임을 강조.');
@@ -552,15 +527,26 @@ function chips(s, x, y, items){
     });
   });
 
-  s.addShape(pres.ShapeType.roundRect, { x:P(56), y:P(526), w:P(1168), h:P(62), rectRadius:0.05,
+  const mk = [['주간 10억 명','ChatGPT 주간 활성 이용자(OpenAI, 2026.07)'],
+              ['약 40%','2026년 AI 제작 디지털 광고 비중 전망'],
+              ['0.8~1.3%','AI 검색 클릭률(구글 약 29%) — Similarweb 2026']];
+  mk.forEach(function(t, i){
+    const x = P(56) + i*P(394);
+    s.addShape(pres.ShapeType.roundRect, { x, y:P(522), w:P(382), h:P(36), rectRadius:0.06,
+      fill:{ color:BG2 }, line:{ color:LINE, width:0.75 } });
+    s.addText([{ text:t[0]+'  ', options:{ fontFace:H, color:NAVY } },
+               { text:t[1], options:{ fontFace:B, color:TX } }],
+      { x:x+P(14), y:P(522), w:P(354), h:P(36), isTextBox:true, margin:0, valign:'middle', fontSize:7.5 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x:P(56), y:P(570), w:P(1168), h:P(58), rectRadius:0.05,
     fill:{ color:'334155' }, line:{ color:'334155' } });
-  s.addText('기능·연동·운영 범위는 도입 상담에서 확정합니다', { x:P(76), y:P(536), w:P(700), h:P(22),
+  s.addText('기능·연동·운영 범위는 도입 상담에서 확정합니다', { x:P(76), y:P(580), w:P(700), h:P(22),
     isTextBox:true, margin:0, fontFace:H, fontSize:12, color:'FFFFFF' });
-  s.addText('기술을 고르고, 브랜드에 맞추고, 실행을 돕습니다', { x:P(76), y:P(558), w:P(700), h:P(20),
+  s.addText('기술을 고르고, 브랜드에 맞추고, 실행을 돕습니다', { x:P(76), y:P(602), w:P(700), h:P(20),
     isTextBox:true, margin:0, fontFace:B, fontSize:9, color:'D9DEE7' });
-  s.addShape(pres.ShapeType.roundRect, { x:P(960), y:P(540), w:P(244), h:P(34), rectRadius:0.1,
+  s.addShape(pres.ShapeType.roundRect, { x:P(960), y:P(582), w:P(244), h:P(34), rectRadius:0.1,
     fill:{ color:'FFFFFF' }, line:{ color:'FFFFFF' } });
-  s.addText('mplanit@mplanit.co.kr', { x:P(960), y:P(540), w:P(244), h:P(34), isTextBox:true, margin:0,
+  s.addText('mplanit@mplanit.co.kr', { x:P(960), y:P(582), w:P(244), h:P(34), isTextBox:true, margin:0,
     align:'center', valign:'middle', fontFace:H, fontSize:9, color:'334155' });
   foot(s, 'Appendix · 근거와 표기 기준', '09 / 09');
 })();
