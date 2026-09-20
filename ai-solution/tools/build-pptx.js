@@ -74,31 +74,37 @@ function quote(s, x, y, w, line, sub){
   if (sub) s.addText(sub, { x:x+P(14), y:y+P(26), w:w-P(26), h:P(16), isTextBox:true, margin:0,
     fontFace:B, fontSize:7.5, color:TX2 });
 }
+// 글자 폭 추정 — 한글/전각은 넓게, 라틴/숫자는 좁게 (칩 줄바꿈 방지)
+function textW(t){
+  let w = 0;
+  for (const ch of t) w += /[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF\u3000-\u303F\uFF00-\uFFEF]/.test(ch) ? 10.2 : 5.6;
+  return w;
+}
 // 매체/채널 칩 — 로고 보유 매체는 아이콘, 그 외는 브랜드 컬러 점
 function medias(s, x, y, items, maxW){
   const path = require('path');
   let cx = x, cy = y;
   items.forEach(function(it){
     if (it.label){   // 구분 라벨
-      const lw = P(it.label.length*7.4 + 8);
+      const lw = P(textW(it.label) + 8);
       s.addText(it.label, { x:cx, y:cy, w:lw, h:P(22), isTextBox:true, margin:0, valign:'middle',
         fontFace:H, fontSize:7.5, color:TX3 });
       cx += lw + P(4); return;
     }
-    const w = P(it.t.length*7.6 + (it.icon ? 30 : 24));
+    const w = P(textW(it.t) + (it.icon ? 32 : 26));
     if (maxW && cx + w > x + maxW){ cx = x; cy += P(28); }
     s.addShape(pres.ShapeType.roundRect, { x:cx, y:cy, w, h:P(22), rectRadius:0.1,
       fill:{ color:'FFFFFF' }, line:{ color:LINE, width:0.75 } });
     if (it.icon){
       s.addImage({ path: path.join(__dirname, '..', 'assets', 'png', 'icon-'+it.icon+'.png'),
         x:cx+P(7), y:cy+P(5.5), w:P(11), h:P(11) });
-      s.addText(it.t, { x:cx+P(21), y:cy, w:w-P(26), h:P(22), isTextBox:true, margin:0, valign:'middle',
-        fontFace:H, fontSize:7.5, color:TX });
+      s.addText(it.t, { x:cx+P(20), y:cy, w:w-P(22), h:P(22), isTextBox:true, margin:0, valign:'middle',
+        fontFace:H, fontSize:7.5, color:TX, wrap:false });
     } else {
       s.addShape(pres.ShapeType.ellipse, { x:cx+P(8), y:cy+P(8), w:P(6), h:P(6),
         fill:{ color:it.c }, line:{ color:it.c } });
-      s.addText(it.t, { x:cx+P(18), y:cy, w:w-P(24), h:P(22), isTextBox:true, margin:0, valign:'middle',
-        fontFace:H, fontSize:7.5, color:TX });
+      s.addText(it.t, { x:cx+P(17), y:cy, w:w-P(20), h:P(22), isTextBox:true, margin:0, valign:'middle',
+        fontFace:H, fontSize:7.5, color:TX, wrap:false });
     }
     cx += w + P(6);
   });
@@ -411,7 +417,7 @@ function chips(s, x, y, items){
       s.addText(m[0], { x:mx+P(10), y:p.y+P(44), w:P(90), h:P(12), isTextBox:true, margin:0, fontFace:B, fontSize:7, color:TX2 });
       s.addText(m[1], { x:mx+P(10), y:p.y+P(56), w:P(90), h:P(18), isTextBox:true, margin:0, fontFace:H, fontSize:10.5, color:NAVY });
     });
-    const endY = medias(s, x+P(16), p.y+P(88), p.chips, w-P(32));
+    const endY = medias(s, x+P(14), p.y+P(88), p.chips, w-P(28));
     p.li.forEach(function(l, i){
       s.addText([{ text:'· ', options:{ color:SKY, fontFace:H } },
                  { text:l[0]+' — ', options:{ color:NAVY, fontFace:H } },
