@@ -1,0 +1,12 @@
+MPLANIT Motion Studio 로컬 확인
+
+1. ZIP 파일을 먼저 모두 압축 해제합니다.
+2. index.html을 Chrome 또는 Edge에서 더블클릭해 엽니다.
+3. 영상이 자동재생되지 않으면 PLAY SHOWREEL 또는 재생 버튼을 누릅니다.
+
+영상과 이미지는 assets 폴더에 포함되어 있습니다. 폴더를 함께 보관해주세요.
+글꼴은 인터넷 연결 시 원래 디자인으로 로드됩니다.
+
+영상 교체: content.js의 video/poster 경로 또는 assets 폴더 파일을 교체합니다.
+편집 화면 edit.html의 미리보기 및 ZIP 내보내기는 웹서버 환경에서 사용해주세요.
+문의 폼은 이메일 앱으로 연결됩니다.
