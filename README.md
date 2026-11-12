@@ -27,3 +27,13 @@
 - **이미지**: `ai-solution/assets/` — 사내 PPT(2026.09)에서 추출한 실제 제품 화면과 정식 로고
 - **제작 규칙**: `.claude/skills/mplanit-deck/SKILL.md` — 서체(페이퍼로지)·컬러(네이비 #1B468B / 스카이 #399BC1)·
   장표 구조·문구 규칙을 정리한 사내 장표 스킬. 다음 장표도 이 규칙으로 만든다.
+
+---
+
+## 사내 AI 최종 통합 · 취합 · 확인 공유본 (V.1 · 2026-11-12)
+
+엠플랜잇 광고플랫폼 + AI-LAB + AI 사내 봇 최종 통합을 위한 데이터 · 요금 · 일정 협의 자료 — 구조도 A~F · 담당별 체크리스트 · 협의표
+
+- **웹**: https://raniara7-byte.github.io/mplanit/ai-integration/ (→ `ai-integration/사내AI통합_구조도_공유용_V1_261112.html`)
+- 단일 HTML(폰트 내장) · 브라우저에서 편집 → 수정본 저장 · PDF 버튼으로 인쇄
+- 원본 빌드: CLAUDE_RA의 Claude outputs/사내AI통합_공유구조도/build-share.mjs (content.json · src/)
